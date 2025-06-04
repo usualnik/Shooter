@@ -14,7 +14,6 @@ public class InventoryCell : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject _deleteButton;
     private void Start()
     {
-        
         if (_inventoryItemSo)
         {
             _cellSprite.sprite = _inventoryItemSo.ItemPreview;
@@ -44,6 +43,13 @@ public class InventoryCell : MonoBehaviour, IPointerClickHandler
             ShowDeleteButton();
         }
         
+    }
+
+    public void AddItemToCell(InventoryItemSO item)
+    {
+        _cellSprite.sprite = item.ItemPreview;
+        _stackText.text = item.Amount > 1 ? item.Amount.ToString() : string.Empty ;
+        IsEmpty = false;
     }
 
   

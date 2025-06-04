@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Pickable
   - 
   - 
   - 
@@ -52,4 +52,7 @@ TagManager:
     locked: 0
   - name: Mutant
     uniqueID: 2517185155
+    locked: 0
+  - name: PlayerGun
+    uniqueID: 4214198373
     locked: 0

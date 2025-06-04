@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -11,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     
     private Rigidbody2D _rigidbody;
     private Vector2 _inputVector;
+    private Vector2 _lookDir = Vector2.right;
     private Vector2 _smoothInputVelocity;
     private bool _isMobile = false;
 
@@ -68,16 +70,32 @@ public class PlayerMovement : MonoBehaviour
         {
             foreach (var visual in _playerVisuals)
             {
-                visual.flipX = false;
-                
+                if (visual.sortingLayerName != "PlayerGun")
+                {
+                    visual.flipX = false;
+                    _lookDir = _inputVector.normalized;
+                }
             }
         }
         else if(_inputVector.x < 0)
         {
             foreach (var visual in _playerVisuals)
             {
-                visual.flipX = true;
+                if (visual.sortingLayerName != "PlayerGun")
+                {
+                    visual.flipX = true;
+                    _lookDir = _inputVector.normalized;
+
+                }
             }
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(gameObject.transform.position, _lookDir);
+    }
+    
+    public Vector2 GetLookDirection() => _lookDir;
 }

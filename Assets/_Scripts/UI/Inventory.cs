@@ -6,11 +6,40 @@ public class Inventory : MonoBehaviour
 {
     [SerializeField] private List<InventoryCell> _inventoryCells;
 
+    private PickableItemScanner _scanner;
+    
     private void Start()
     {
+        _scanner = gameObject.GetComponent<PickableItemScanner>();
+        
+        _scanner.OnItemFound += Scanner_OnItemFound;
+        
         foreach (var inventoryCell in _inventoryCells)
         {
             inventoryCell.gameObject.SetActive(inventoryCell.IsEmpty);
+        }
+    }
+    
+    private void OnDestroy()
+    {
+        _scanner.OnItemFound -= Scanner_OnItemFound;
+    }
+
+
+    private void Scanner_OnItemFound(object sender, PickableItemScanner.OnItemFoundEventArgs e)
+    {
+        AddItemToInventory(e.ItemFound);
+    }
+   
+    private void AddItemToInventory(InventoryItemSO item)
+    {
+        foreach (var inventoryCell in _inventoryCells)
+        {
+            if (inventoryCell.IsEmpty)
+            {
+                inventoryCell.AddItemToCell(item);
+                break;
+            }
         }
     }
 }
