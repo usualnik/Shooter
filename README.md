@@ -1,4 +1,4 @@
-![][Assets/PoketZone2.gif]
+![](Assets/PocketZone2.gif)
 
 # Тестовое задание выполнено полностью
 
