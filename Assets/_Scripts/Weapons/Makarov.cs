@@ -14,7 +14,7 @@ public class Makarov : BaseWeapon
         
         GameObject bulletInstance = Instantiate(
             AmmoSO.ItemPrefab, 
-            transform.position, 
+            _shootTransform.position, 
             Quaternion.identity
         );
         

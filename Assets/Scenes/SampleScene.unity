@@ -13357,6 +13357,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1791571979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1334925289355544802, guid: 998c53c45dd15774e9b6b1ee4653e531, type: 3}
+  m_PrefabInstance: {fileID: 7499460933448065562}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2062677456 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4824354910207064541, guid: 6fcf09993d9332c4592553df708be331, type: 3}
@@ -14124,6 +14129,14 @@ PrefabInstance:
       propertyPath: _inventoryCells.Array.data[11]
       value: 
       objectReference: {fileID: 937653861}
+    - target: {fileID: 5007205789065221676, guid: 998c53c45dd15774e9b6b1ee4653e531, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6336199100778628601, guid: 998c53c45dd15774e9b6b1ee4653e531, type: 3}
+      propertyPath: _currentWeaponPrefab
+      value: 
+      objectReference: {fileID: 1791571979}
     - target: {fileID: 6780171036351924070, guid: 998c53c45dd15774e9b6b1ee4653e531, type: 3}
       propertyPath: _joystick
       value: 

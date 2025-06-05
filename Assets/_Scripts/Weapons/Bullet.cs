@@ -15,6 +15,10 @@ public class Bullet : MonoBehaviour
 
     public void Initialize(Vector2 shootDirection)
     {
+        if (shootDirection == Vector2.zero)
+        {
+            shootDirection = Vector2.right; // by default we shoot to the right
+        }
         direction = shootDirection.normalized;
         
        

@@ -1,13 +1,18 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
-{
+{ 
+    public event Action<object, Vector2> OnChangeLookDir;
+
     [Header("Movement Settings")]
     [SerializeField] private float _movementSpeed = 5f;
     
     [Header("Joystick Reference")]
     [SerializeField] private Joystick _joystick; 
+    
+    
     
     private Rigidbody2D _rigidbody;
     private Vector2 _inputVector;
@@ -16,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     private bool _isMobile;
 
     private SpriteRenderer[] _playerVisuals;
+    private bool _isFacingRight;
+
 
     void Awake()
     {
@@ -67,36 +74,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void RotateTowardsInput()
     {
-        if (_inputVector.x > 0)
+        if (_inputVector.x != 0)
+            _lookDir = _inputVector.normalized;
+        
+        if (!(_inputVector.magnitude > 0.1f)) return; // ignore deadzone 
+        
+        bool newDirectionRight = _inputVector.x > 0;
+        if (newDirectionRight != _isFacingRight)
         {
-            foreach (var visual in _playerVisuals)
-            {
-                if (visual.sortingLayerName != "PlayerGun")
-                {
-                    visual.flipX = false;
-                    _lookDir = _inputVector.normalized;
-                }
-            }
-        }
-        else if(_inputVector.x < 0)
-        {
-            foreach (var visual in _playerVisuals)
-            {
-                if (visual.sortingLayerName != "PlayerGun")
-                {
-                    visual.flipX = true;
-                    _lookDir = _inputVector.normalized;
-                }
-            }
+            _isFacingRight = newDirectionRight;
+            OnChangeLookDir?.Invoke(this, _inputVector);
         }
     }
-
-    
-    // private void OnDrawGizmos()
-    // {
-    //     Gizmos.color = Color.red;
-    //     Gizmos.DrawRay(gameObject.transform.position, _lookDir);
-    // }
-
     public Vector2 GetLookDirection() => _lookDir;
 }
+    

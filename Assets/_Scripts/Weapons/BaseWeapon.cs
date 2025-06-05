@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class BaseWeapon : MonoBehaviour, IPickable
 {
-    [SerializeField] private bool CanPick = true;
+    [SerializeField] private bool _canPick = true;
+    [SerializeField] protected Transform _shootTransform;
     
     public AmmoSO AmmoSO;
     public WeaponSO GunSO;
@@ -17,7 +18,7 @@ public class BaseWeapon : MonoBehaviour, IPickable
     
     public BaseItemSO PickItem()
     {
-        if (CanPick)
+        if (_canPick)
         {
             Invoke(nameof(DeactivateSelf),0.1f);
             return GunSO;
