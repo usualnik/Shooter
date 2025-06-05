@@ -14,7 +14,7 @@ public class PickableItemScanner : MonoBehaviour
     public event EventHandler<OnItemFoundEventArgs> OnItemFound;
     public class OnItemFoundEventArgs : EventArgs
     {
-        public InventoryItemSO ItemFound;
+        public BaseItemSO BaseItemFound;
     }
 
     private void Start()
@@ -32,13 +32,12 @@ public class PickableItemScanner : MonoBehaviour
 
         foreach (var hit in hits)
         {
-           
-            IPickable pickable = hit.GetComponentInParent<IPickable>();
+            var pickable = hit.GetComponent<IPickable>();
             
             if (pickable != null)
             {
                 OnItemFoundEventArgs onItemFoundEventArgs = new OnItemFoundEventArgs()
-                    {ItemFound = pickable.PickItem()};
+                    {BaseItemFound = pickable.PickItem()};
                 OnItemFound?.Invoke(this, onItemFoundEventArgs);
                 break; 
             }

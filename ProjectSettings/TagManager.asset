@@ -3,18 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - Pickable
-  - 
-  - 
-  - 
+  - Environment
+  - Player
+  - Enemy
   - 
   - 
   - 
@@ -53,6 +55,6 @@ TagManager:
   - name: Mutant
     uniqueID: 2517185155
     locked: 0
-  - name: PlayerGun
-    uniqueID: 4214198373
+  - name: Pickable
+    uniqueID: 892563391
     locked: 0

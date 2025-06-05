@@ -1,6 +1,5 @@
 
 public interface IPickable
 {
-    
-    public InventoryItemSO PickItem();
+    public BaseItemSO PickItem();
 }

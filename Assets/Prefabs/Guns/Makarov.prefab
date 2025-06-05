@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -80768923
+  m_SortingLayerID: 892563391
   m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1b4696d341b6ec443b4e499361de0675, type: 3}
@@ -99,8 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c842c9189119248409d81e4f4e9d9aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmmoSO: {fileID: 11400000, guid: 9ba479c2139a4f941b144657b2d00036, type: 2}
-  GunSO: {fileID: 11400000, guid: a2399bf623a19a74c902ce65ff6c1524, type: 2}
+  CanPick: 1
+  AmmoSO: {fileID: 11400000, guid: 93a2f43faa3a53948bb2223f2f5511f7, type: 2}
+  GunSO: {fileID: 11400000, guid: 085df725983c58b4dbcfdf798ad7e119, type: 2}
   AmmoLeft: 0
 --- !u!50 &4260297886172542337
 Rigidbody2D:

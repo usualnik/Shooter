@@ -17,7 +17,7 @@ public class PlayerShooting : MonoBehaviour
     {
         _playerMovement = gameObject.GetComponent<PlayerMovement>();
     }
-
+  
     public void Shoot()
     {
         if (_currentWeaponPrefab)
@@ -29,15 +29,18 @@ public class PlayerShooting : MonoBehaviour
             
             OnShoot?.Invoke(this,onShootEventArgs);
 
-
             Vector2 shootDir = _playerMovement.GetLookDirection();
             
-            _currentWeaponPrefab.GetComponent<BaseWeapon>().Shoot(shootDir);
+            // need to cache this later
+            _currentWeaponPrefab.TryGetComponent(out BaseWeapon weapon);
+            weapon.Shoot(shootDir);
         }
     }
 
     public int GetPlayerAmmo()
     {
-        return _currentWeaponPrefab.GetComponent<BaseWeapon>().AmmoLeft;
+        // need to cache this later
+        _currentWeaponPrefab.TryGetComponent(out BaseWeapon weapon);
+        return weapon.AmmoLeft;
     }
 }

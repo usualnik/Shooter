@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -12,9 +11,9 @@ public class PlayerMovement : MonoBehaviour
     
     private Rigidbody2D _rigidbody;
     private Vector2 _inputVector;
-    private Vector2 _lookDir = Vector2.right;
+    private Vector2 _lookDir;
     private Vector2 _smoothInputVelocity;
-    private bool _isMobile = false;
+    private bool _isMobile;
 
     private SpriteRenderer[] _playerVisuals;
 
@@ -24,8 +23,10 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody.gravityScale = 0f;
         _rigidbody.freezeRotation = true;
         _playerVisuals = gameObject.GetComponentsInChildren<SpriteRenderer>();
+        
+        
         // _isMobile = Application.isMobilePlatform;
-        _isMobile = true;
+        _isMobile = true; 
     }
 
     void Update()
@@ -85,17 +86,17 @@ public class PlayerMovement : MonoBehaviour
                 {
                     visual.flipX = true;
                     _lookDir = _inputVector.normalized;
-
                 }
             }
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(gameObject.transform.position, _lookDir);
-    }
     
+    // private void OnDrawGizmos()
+    // {
+    //     Gizmos.color = Color.red;
+    //     Gizmos.DrawRay(gameObject.transform.position, _lookDir);
+    // }
+
     public Vector2 GetLookDirection() => _lookDir;
 }

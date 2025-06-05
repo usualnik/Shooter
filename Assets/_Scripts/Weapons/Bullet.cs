@@ -2,20 +2,15 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [Header("Настройки пули")]
-    [SerializeField] private float speed = 10f; 
-    [SerializeField] private float lifetime = 3f;
-    [SerializeField] private int damage = 10;
-    
+    [SerializeField] private AmmoSO _bulletTypeSO;
+
     private Rigidbody2D rb;
     private Vector2 direction;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        var collider = GetComponent<Collider2D>();
-        
-        Destroy(gameObject, lifetime);
+        Destroy(gameObject, _bulletTypeSO.Lifetime);
     }
 
     public void Initialize(Vector2 shootDirection)
@@ -27,12 +22,12 @@ public class Bullet : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         
         
-        rb.velocity = direction * speed;
+       rb.velocity = direction * _bulletTypeSO.Speed;
     }
 
     void FixedUpdate()
     {
-        rb.velocity = direction * speed;
+       rb.velocity = direction * _bulletTypeSO.Speed;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -40,7 +35,7 @@ public class Bullet : MonoBehaviour
         
         if (other.TryGetComponent(out IDamageable damageable) && !other.CompareTag("Player"))
         {
-            damageable.TakeDamage(damage);
+           damageable.TakeDamage(_bulletTypeSO.Damage);
             Destroy(gameObject);
         }
     }

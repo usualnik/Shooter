@@ -4,7 +4,7 @@ using UnityEngine;
 public class BaseMutant : MonoBehaviour , IDamageable
 {
     [SerializeField] private int _currentHealth;
-    [SerializeField] private InventoryItemSO _mutantDrop;
+    [SerializeField] private BaseItemSO _mutantDrop;
     
     
     private const int MaxHealth = 100;

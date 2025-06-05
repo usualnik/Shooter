@@ -5,8 +5,8 @@ public class BaseWeapon : MonoBehaviour, IPickable
 {
     [SerializeField] private bool CanPick = true;
     
-    public InventoryItemSO AmmoSO;
-    public InventoryItemSO GunSO;
+    public AmmoSO AmmoSO;
+    public WeaponSO GunSO;
     
     public int AmmoLeft;
 
@@ -14,8 +14,8 @@ public class BaseWeapon : MonoBehaviour, IPickable
     {
         AmmoLeft = AmmoSO.Amount;
     }
-
-    public InventoryItemSO PickItem()
+    
+    public BaseItemSO PickItem()
     {
         if (CanPick)
         {

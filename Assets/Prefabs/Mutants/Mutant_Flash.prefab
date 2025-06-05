@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1634851396821092967}
   - component: {fileID: 1634851396821092966}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: L_Leg_Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1634851396912633928}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: L_Arm_Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1634851397071376303}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: R_Arm_Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1634851397325918785}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mutant_Flash_Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1634851397500727481}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: R_Leg_Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,9 +229,9 @@ GameObject:
   - component: {fileID: 1922028285}
   - component: {fileID: 1136884599867888846}
   - component: {fileID: 2751770865056787916}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mutant_Flash
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentHealth: 0
-  _mutantDrop: {fileID: 11400000, guid: a2399bf623a19a74c902ce65ff6c1524, type: 2}
+  _mutantDrop: {fileID: 11400000, guid: 085df725983c58b4dbcfdf798ad7e119, type: 2}
 --- !u!50 &1922028285
 Rigidbody2D:
   serializedVersion: 4
@@ -330,7 +330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1634851397911009018}
   - component: {fileID: 1634851397911009017}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: R_Arm_Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1634851398444003441}
   - component: {fileID: 1634851398444003440}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,7 +498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1634851398573961711}
   - component: {fileID: 1634851398573961710}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: L_Arm_Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,7 +581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1634851398725130321}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 'L_Leg_Bone '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1634851398809907514}
   - component: {fileID: 1634851398809907513}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: R_Leg_Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -700,7 +700,7 @@ GameObject:
   - component: {fileID: 8681153657351162671}
   - component: {fileID: 5421956473238299927}
   - component: {fileID: 7191088812876158593}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -789,7 +789,7 @@ GameObject:
   - component: {fileID: 3262641378206518599}
   - component: {fileID: 26365941974211572}
   - component: {fileID: 2954739668570341312}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: HealthBarBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -866,7 +866,7 @@ GameObject:
   - component: {fileID: 7828465426441640715}
   - component: {fileID: 6530748771710838255}
   - component: {fileID: 4688446447411285342}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

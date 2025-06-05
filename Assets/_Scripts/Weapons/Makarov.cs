@@ -24,7 +24,7 @@ public class Makarov : BaseWeapon
         }
         else
         {
-            Debug.LogError("Bullet component missing on projectile prefab!");
+            Debug.LogError("Bullet obj is missing");
         }
     }
 }

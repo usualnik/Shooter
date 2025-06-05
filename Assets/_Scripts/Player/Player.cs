@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour , IDamageable
 { 
+    [SerializeField]private int _currentHealth;
     private const int MaxHealth = 100;
-    private int _currentHealth;
-
+    
     public event EventHandler OnTakingDamage; 
     
     private void Awake()
@@ -28,15 +28,9 @@ public class Player : MonoBehaviour , IDamageable
     {
         Destroy(gameObject);
     }
-    
-    public int GetCurrentHealth()
-    {
-        return _currentHealth;
-    }
-    public float GetMaxHealthConst()
-    {
-        return MaxHealth;
-    }
+
+    public int GetCurrentHealth() => _currentHealth;
+    public static float GetMaxHealthConst() => MaxHealth;
 
     public void SetHealth(in int playerHealth)
     {
