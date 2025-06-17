@@ -15,6 +15,8 @@ public class UI_PlayerHealthBar : MonoBehaviour
         _player.OnTakingDamage += Player_OnTakingDamage;
         
         
+        
+        
         Invoke(nameof(UpdateHealthBar),_updateDelay); // delays ui update (load system can load values first)
     }
 
@@ -32,6 +34,7 @@ public class UI_PlayerHealthBar : MonoBehaviour
 
     private void UpdateHealthBar()
     {
+        Debug.Log(_player);
         _healthBar.fillAmount = _player.GetCurrentHealth() / Player.GetMaxHealthConst();
     }
 
