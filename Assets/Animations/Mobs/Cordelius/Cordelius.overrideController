@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Cordelius
+  m_Controller: {fileID: 9100000, guid: 79706e4c6b8f7794eb4a21a0deccefbd, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 11b566566c175e640a3eabf93765996e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 16d6da5ed6c98214f9ee14967340ca8d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e3829dfc34ddded488c23ff939f37550, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b2e2faa3855e21d42b08b93481bffa84, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d7f511b41b644b94c96dc01c9564e220, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 85bec818a998b04458dcec245514983d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e973c3e43b81b1c4ab876df9b2c20acf, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8e31996dcc2889942894ef1888a8b95c, type: 2}

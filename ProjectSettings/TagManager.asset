@@ -2,10 +2,15 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags:
   - Ground
+  - PlayerTeam
+  - EnemyTeam
   - Enemy
+  - MovementJoystick
+  - ShootingJoystick
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -16,8 +21,8 @@ TagManager:
   - Pickable
   - Environment
   - Player
-  - Enemy
-  - 
+  - Mob
+  - Obstacle
   - 
   - 
   - 
@@ -52,9 +57,8 @@ TagManager:
   - name: Player
     uniqueID: 151134419
     locked: 0
-  - name: Mutant
+  - name: Mob
     uniqueID: 2517185155
     locked: 0
-  - name: Pickable
-    uniqueID: 892563391
-    locked: 0
+  m_RenderingLayers:
+  - Default

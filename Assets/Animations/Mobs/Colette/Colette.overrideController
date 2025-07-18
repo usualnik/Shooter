@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Colette
+  m_Controller: {fileID: 9100000, guid: 79706e4c6b8f7794eb4a21a0deccefbd, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 11b566566c175e640a3eabf93765996e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 73c1c686c5d8c70438a4d56d9bb38f5b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e3829dfc34ddded488c23ff939f37550, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c73e832f38fbbc1459ba0919c7a367bb, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d7f511b41b644b94c96dc01c9564e220, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b4a994ac6e0f6254e94aefd991f7b6fb, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e973c3e43b81b1c4ab876df9b2c20acf, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 794f8fa7c3c26bc4d94dcae535e25403, type: 2}
