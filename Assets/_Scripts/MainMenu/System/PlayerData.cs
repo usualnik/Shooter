@@ -6,6 +6,8 @@ public class Data
 {
     public WeaponSO WeaponData;
 
+    public string NickName = "NickName";
+
     public int Rating = 99999;
         
     //Currency
@@ -82,7 +84,8 @@ public class PlayerData : MonoBehaviour
         data.WeaponData = weaponData;
     }
 
-    //-----------------Get----------------
+
+    #region Get
     public int GetLevelPoints() => data.LevelPoints;
     public int GetHealth() => data.Health;
     public float GetDamage() => data.Damage;
@@ -95,10 +98,10 @@ public class PlayerData : MonoBehaviour
     public int GetHardCurrency() => data.HardCurrency;
     public int GetRating() => data.Rating;
     public WeaponSO GetCurrentGunSO() => data.WeaponData;
+    public string GetNickName() => data.NickName;
+    #endregion
 
-    //-----------------Add----------------
-
-
+    #region Add
     public void AddHealth(int value) 
     {
         if(data.LevelPoints > 0)
@@ -153,6 +156,8 @@ public class PlayerData : MonoBehaviour
     public void AddSoftCurrency(int value) => data.SoftCurrency += value;
     public void AddHardCurrency(int value) => data.HardCurrency += value;
     public void GainRating(int value) => data.Rating += -value;
-      
+    #endregion
+
+    public void SetNickname(string nickname) => data.NickName = nickname;   
 
 }

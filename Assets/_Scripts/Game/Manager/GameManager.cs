@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     
     private GameData _currentGameData;
 
-    private const int MainMenuBuildIndex = 0;
+    private const int MainMenuBuildIndex = 1;
 
     private bool IsGameActive = false;
 
