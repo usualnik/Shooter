@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cordelius_Left_5_0: -5671477596817199140
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
