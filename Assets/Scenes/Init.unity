@@ -194,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     WeaponData: {fileID: 11400000, guid: 412d76d95b1113d4d906f56c144dd33e, type: 2}
+    SkinData: {fileID: 11400000, guid: 3251a68b23032e440a96638c6eebccf7, type: 2}
     NickName: NICKNAME
     Rating: 99999
     SoftCurrency: 0
@@ -205,7 +206,7 @@ MonoBehaviour:
     Health: 100
     Damage: 25
     CritChance: 1
-    AttackSpeed: 0.2
+    AttackSpeed: 0.4
 --- !u!4 &859338162
 Transform:
   m_ObjectHideFlags: 0

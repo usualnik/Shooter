@@ -85,7 +85,7 @@ public class MobSpawner : MonoBehaviour
     {
         Instantiate(_playerBossPrefab, _playerSpawnPoint.transform.position, Quaternion.identity);
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 2; i < 5; i++)
         {          
             Vector3 spawnOffsetY = new Vector3(0, Random.Range(-10, 10), 0);
             GameObject spawned = Instantiate(_mobsPrefabs[i], _enemySpawnPoint.transform.position + spawnOffsetY, Quaternion.identity);

@@ -8,7 +8,6 @@ public class Bullet : MonoBehaviour
     private Vector2 direction;
 
 
-
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();

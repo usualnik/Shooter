@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Buster
+  m_Controller: {fileID: 9100000, guid: 9123323f6d0fc2746a56df73ae2eacdf, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 4c39396dbddbd9e44ade586e2f03ed75, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8279b13c75a5bd5418dab40de6d04404, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c3b46f2b0d486594e8ebc8c4bbccc625, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 93b76692bfb651a418c84831d792c81a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 78129614bf14126479160bbc9827e757, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: dcf794d4c13c55649925cee156541d86, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 42c28dd9cba3c8647a56c9bf14cbd4c3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ef0658ddfbbe6fa4cb55fb443db2fb66, type: 2}

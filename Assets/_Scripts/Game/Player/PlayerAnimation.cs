@@ -16,6 +16,8 @@ public class PlayerAnimation : MonoBehaviour
     private void Start()
     {
         _playerMovement.OnChangeLookDir += HandleLookDirectionChange;
+
+        _animator.runtimeAnimatorController = PlayerData.Instance.GetSkinDataSO().AnimatorController;
     }
 
     private void OnDestroy()
