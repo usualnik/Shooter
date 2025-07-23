@@ -21,6 +21,7 @@ public class Player : MonoBehaviour , IDamageable
     private const float HealingTimerMax = 3f;
 
     private PlayerShooting _playerShooting;
+    
   
 
     private void Awake()
@@ -29,6 +30,8 @@ public class Player : MonoBehaviour , IDamageable
         _playerShooting = GetComponent<PlayerShooting>();
 
         MaxHealth = PlayerData.Instance.GetHealth();
+
+        
 
 
         _currentHealth = MaxHealth;

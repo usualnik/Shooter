@@ -514,7 +514,7 @@ SpriteRenderer:
   m_SortingLayerID: 151134419
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 4ce962d987e6d5f4d9d9d60b598e88c6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -522,7 +522,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &5293162454931378908
@@ -758,7 +758,7 @@ Animator:
   m_GameObject: {fileID: 7499460933541063558}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9123323f6d0fc2746a56df73ae2eacdf, type: 2}
+  m_Controller: {fileID: 22100000, guid: bad9187227de01449b205bef1b8c065d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -804,15 +804,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 690413380923446019, guid: 4e81c3dd45dfa1545941338bd91a8424, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0000033423162
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 690413380923446019, guid: 4e81c3dd45dfa1545941338bd91a8424, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00001024977
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 690413380923446019, guid: 4e81c3dd45dfa1545941338bd91a8424, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.672897
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 1939447411589821966, guid: 4e81c3dd45dfa1545941338bd91a8424, type: 3}
       propertyPath: m_Name
@@ -824,15 +824,15 @@ PrefabInstance:
       objectReference: {fileID: 8565927735566244275}
     - target: {fileID: 5992621139675396194, guid: 4e81c3dd45dfa1545941338bd91a8424, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0000033423162
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5992621139675396194, guid: 4e81c3dd45dfa1545941338bd91a8424, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00001024977
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5992621139675396194, guid: 4e81c3dd45dfa1545941338bd91a8424, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.672897
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 8086711606550069296, guid: 4e81c3dd45dfa1545941338bd91a8424, type: 3}
       propertyPath: m_TagString

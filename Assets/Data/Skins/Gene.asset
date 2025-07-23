@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c175036659877f41af96964ae003b45, type: 3}
+  m_Name: Gene
+  m_EditorClassIdentifier: 
+  Name: Gene
+  SkinSprite: {fileID: 5905165242759943857, guid: 7bb2c0a32e0bd1541bed7e643c79ba16, type: 3}
+  AnimatorController: {fileID: 22100000, guid: 878cb3db950bb3d4c8dff11198de5a45, type: 2}

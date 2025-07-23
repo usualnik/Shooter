@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c175036659877f41af96964ae003b45, type: 3}
+  m_Name: Monkey
+  m_EditorClassIdentifier: 
+  Name: Monkey
+  SkinSprite: {fileID: 2208213840967403015, guid: 64298c8ae571cbe4085125a65c291a4d, type: 3}
+  AnimatorController: {fileID: 22100000, guid: 9623680403a3ac64b8cc882b5321f610, type: 2}
