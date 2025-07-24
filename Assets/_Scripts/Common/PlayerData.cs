@@ -36,6 +36,7 @@ public class PlayerData : MonoBehaviour
     public event Action OnLevelUp;
     public event Action OnStatChanged;
     public event Action OnPlayerSkinChanged;
+    public event Action OnPlayerHardCurrencyChanged;
 
     [SerializeField] private Data data;
 
@@ -164,7 +165,12 @@ public class PlayerData : MonoBehaviour
         }
     }
     public void AddSoftCurrency(int value) => data.SoftCurrency += value;
-    public void AddHardCurrency(int value) => data.HardCurrency += value;
+    public void AddHardCurrency(int value) 
+    { 
+        data.HardCurrency += value; 
+    
+        OnPlayerHardCurrencyChanged?.Invoke();
+    }
     public void GainRating(int value) => data.Rating += -value;
     #endregion
 

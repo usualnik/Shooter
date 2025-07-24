@@ -4,6 +4,8 @@ using UnityEngine.UI;
 public class ChooseWeaponButton : MonoBehaviour
 {    
     [SerializeField] private WeaponSO WeaponData;
+    [SerializeField] private Image _weaponPreview;
+    [SerializeField] private WeaponSelectedButtonHandler _weaponSelectedButtonHandler;
 
     private Image _buttonImage;
     private Button _button;
@@ -15,12 +17,20 @@ public class ChooseWeaponButton : MonoBehaviour
     }
     private void Start()
     {
-        _buttonImage.sprite = WeaponData?.ItemPreview;
+        _weaponPreview.sprite = WeaponData?.ItemPreview;
+
         _button.onClick.AddListener(SendWeaponData);
+        _button.onClick.AddListener(SelectButton);
     }
     private void OnDestroy()
     {
         _button.onClick.RemoveListener(SendWeaponData);
+        _button.onClick.RemoveListener(SelectButton);
+    }
+
+    private void SelectButton()
+    {
+        _weaponSelectedButtonHandler.UpdateColor(_buttonImage);
     }
 
     private void SendWeaponData()
