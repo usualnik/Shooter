@@ -6,7 +6,7 @@ public class ChooseSkinButton : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private SkinDataSO skinDataSO;
     [SerializeField] private Image _skinPreview;
-    [SerializeField] private SkinButtonsHandler _selectedButtonHandler;
+    [SerializeField] private SkinHandler _selectedButtonHandler;
     [SerializeField] private bool _isUnlocked;
 
     private Image _buttonImage;
@@ -22,7 +22,7 @@ public class ChooseSkinButton : MonoBehaviour, IPointerClickHandler
             _skinPreview.sprite = skinDataSO.SkinSprite;
 
         if (_isUnlocked)
-            _selectedButtonHandler.UpdateColor(_buttonImage);
+            _selectedButtonHandler.UpdateButtonColor(_buttonImage);
     }
 
 
@@ -31,7 +31,7 @@ public class ChooseSkinButton : MonoBehaviour, IPointerClickHandler
         if (_isUnlocked)
         {
             SetPlayerSkinData();
-            _selectedButtonHandler.UpdateColor(_buttonImage);
+            _selectedButtonHandler.UpdateButtonColor(_buttonImage);
         }      
     }
 

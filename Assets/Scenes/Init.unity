@@ -198,7 +198,7 @@ MonoBehaviour:
     NickName: NICKNAME
     Rating: 99999
     SoftCurrency: 0
-    HardCurrency: 30
+    HardCurrency: 0
     Level: 1
     CurrentExperience: 0
     MaxExperience: 400

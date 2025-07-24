@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class BuySkinButton : MonoBehaviour
 {
-    [SerializeField] private SkinButtonsHandler _skinButtonsHandler;
+    [SerializeField] private SkinHandler _skinButtonsHandler;
 
     private Button _buyButton;
 
@@ -19,13 +19,18 @@ public class BuySkinButton : MonoBehaviour
         _buyButton.onClick.AddListener(BuySkin);
     }
 
+    private void OnDestroy()
+    {
+        _buyButton.onClick.RemoveListener(BuySkin);
+    }
+
     private void BuySkin()
     {
         if(PlayerData.Instance.GetHardCurrency() >= RequireHardCurrencyToBuy)
         {
             PlayerData.Instance.AddHardCurrency(-RequireHardCurrencyToBuy);
 
-            _skinButtonsHandler.UnlockNewSkinButton();
+            _skinButtonsHandler.UnlockNewSkin();
 
         }
     }
