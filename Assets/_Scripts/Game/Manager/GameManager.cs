@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
@@ -20,7 +21,8 @@ public class GameManager : MonoBehaviour
 
     private const int MainMenuBuildIndex = 1;
 
-    private bool IsGameActive = false;
+    private bool _isGameActive = false;
+    private bool _isCountingDownTenSec = false;
 
     public enum GameMode
     {
@@ -75,23 +77,31 @@ public class GameManager : MonoBehaviour
     private void StartGame()
     {
         OnGameStarted?.Invoke(_mode);
-        IsGameActive = true;
+        _isGameActive = true;
     }
 
     private void Update()
     {
         EndGameTimerMax -= Time.deltaTime;
-        if (EndGameTimerMax <= 0 && IsGameActive)
+
+        if (EndGameTimerMax <= 10f && !_isCountingDownTenSec)
+        {
+            _isCountingDownTenSec = true;
+            AudioManager.Instance.Play("Countdown");       
+            
+        }
+
+        if (EndGameTimerMax <= 0 && _isGameActive)
         {
             if (_mode == GameMode.ThreeVsThree) 
             {
                 EndGame();
-                IsGameActive = false;
+                _isGameActive = false;
             }
             else
             {
                 KillBossEndGame(false);
-                IsGameActive = false;
+                _isGameActive = false;
             }
            
         }

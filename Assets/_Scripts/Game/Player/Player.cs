@@ -79,7 +79,10 @@ public class Player : MonoBehaviour , IDamageable
    
     public void TakeDamage(float damage)
     {
+        AudioManager.Instance.Play("Bullet");
+
         _currentHealth -= damage;
+
 
         //Reset healing timer, so we cant heal when taking damage
         _healingTimer = HealingTimerMax;

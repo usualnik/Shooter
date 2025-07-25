@@ -9,6 +9,20 @@ public class UpdateSoftCurrencyText : MonoBehaviour
     {
         _softCurrencyText = GetComponent<TextMeshProUGUI>();
     }
+    private void Start()
+    {
+        PlayerData.Instance.OnPlayerSoftCurrencyChanged += PlayerData_OnPlayerSoftCurrencyChanged;
+    }
+
+    private void OnDestroy()
+    {
+        PlayerData.Instance.OnPlayerSoftCurrencyChanged -= PlayerData_OnPlayerSoftCurrencyChanged;
+    }
+
+    private void PlayerData_OnPlayerSoftCurrencyChanged()
+    {
+        UpdateSoftCurrency();
+    }
 
 
     private void OnEnable()

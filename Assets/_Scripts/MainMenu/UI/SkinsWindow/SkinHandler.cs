@@ -50,6 +50,7 @@ public class SkinHandler : MonoBehaviour
         var button = lockedSkins[rand].GetComponent<ChooseSkinButton>();
 
         button.SetUnlocked();
+        button.RemoveLockIcon();
         unlockedButtons.Add(button);
          
         UpdateButtonsUi();             

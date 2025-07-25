@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 8Bit
   m_EditorClassIdentifier: 
   Name: 8Bit
-  SkinSprite: {fileID: 21300000, guid: 8ff226aab67d0e04b90ac9234b1c2ab1, type: 3}
+  SkinSprite: {fileID: 9197332554811408147, guid: 35eba3e7e603e974a9422080187e9d71, type: 3}
   AnimatorController: {fileID: 22100000, guid: bad9187227de01449b205bef1b8c065d, type: 2}
