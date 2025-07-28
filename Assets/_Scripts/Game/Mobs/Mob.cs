@@ -28,6 +28,8 @@ public class Mob : MonoBehaviour , IDamageable
 
     public void TakeDamage(float damage)
     {
+        AudioManager.Instance.Play("Bullet");
+
         _currentHealth -= damage;
         OnTakingDamage?.Invoke(this,EventArgs.Empty);
 
@@ -78,6 +80,9 @@ public class Mob : MonoBehaviour , IDamageable
 
     private void DestroySelf()
     {
+        AudioManager.Instance.Play("UnitDeath");
+
+
         if (IsBoss)
             GameManager.Instance.KillBossEndGame(true);
 

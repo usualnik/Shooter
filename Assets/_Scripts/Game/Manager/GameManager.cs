@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
@@ -13,14 +14,21 @@ public class GameManager : MonoBehaviour
     public bool IsMobilePlatform {  get; private set; }
     public float EndGameTimerMax {  get; private set; }
     public GameMode Mode { get; private set; }
-        
+
+    public bool IsPlayerWin { get; private set; }
+    public bool IsEqualScore { get; private set; }
+
+    public int PreviousRating { get; private set; }
+    public int PreviousCurrency { get; private set; }
+
     [SerializeField] private GameMode _mode;    
     
     private GameData _currentGameData;
 
     private const int MainMenuBuildIndex = 1;
 
-    private bool IsGameActive = false;
+    private bool _isGameActive = false;
+    private bool _isCountingDownTenSec = false;
 
     public enum GameMode
     {
@@ -75,35 +83,48 @@ public class GameManager : MonoBehaviour
     private void StartGame()
     {
         OnGameStarted?.Invoke(_mode);
-        IsGameActive = true;
+        _isGameActive = true;
     }
 
     private void Update()
     {
         EndGameTimerMax -= Time.deltaTime;
-        if (EndGameTimerMax <= 0 && IsGameActive)
+
+        if (EndGameTimerMax <= 10f && !_isCountingDownTenSec)
+        {
+            _isCountingDownTenSec = true;
+            AudioManager.Instance.Play("Countdown");       
+            
+        }
+
+        if (EndGameTimerMax <= 0 && _isGameActive)
         {
             if (_mode == GameMode.ThreeVsThree) 
             {
                 EndGame();
-                IsGameActive = false;
+                _isGameActive = false;
             }
             else
             {
                 KillBossEndGame(false);
-                IsGameActive = false;
+                _isGameActive = false;
             }
            
         }
     }
     private void EndGame()
     {
+        PreviousRating = PlayerData.Instance.GetRating();
+        PreviousCurrency = PlayerData.Instance.GetSoftCurrency();
+
+
         if(GameUIManager.Instance.GetPlayerTeamScore() > GameUIManager.Instance.GetEnemyTeamScore())
         {
             // Player Win Condition
             PlayerData.Instance.AddSoftCurrency(10);
             PlayerData.Instance.AddExperience(200);           
             PlayerData.Instance.GainRating(Random.Range(500, 1000));
+            IsPlayerWin = true;
         }
         else if(GameUIManager.Instance.GetPlayerTeamScore() == GameUIManager.Instance.GetEnemyTeamScore())
         {
@@ -111,6 +132,7 @@ public class GameManager : MonoBehaviour
             PlayerData.Instance.AddSoftCurrency(5);
             PlayerData.Instance.AddExperience(150);            
             PlayerData.Instance.GainRating(Random.Range(500, 1000));
+            IsEqualScore = true;
         }
         else
         {
@@ -118,6 +140,7 @@ public class GameManager : MonoBehaviour
             PlayerData.Instance.AddSoftCurrency(1);
             PlayerData.Instance.AddExperience(100);            
             PlayerData.Instance.GainRating(Random.Range(100, 500));
+            IsPlayerWin = false;
         }
 
         OnGameEneded?.Invoke(); // Прокидывать резульат победы
@@ -127,6 +150,11 @@ public class GameManager : MonoBehaviour
 
     public void KillBossEndGame(bool bossKilled)
     {
+
+        PreviousRating = PlayerData.Instance.GetRating();
+        PreviousCurrency = PlayerData.Instance.GetSoftCurrency();
+
+
         switch (_mode)
         {
             case GameMode.None:
@@ -141,6 +169,7 @@ public class GameManager : MonoBehaviour
                     PlayerData.Instance.AddSoftCurrency(1);
                     PlayerData.Instance.AddExperience(100);
                     PlayerData.Instance.GainRating(Random.Range(100, 500));
+                    IsPlayerWin = false;
                 }
                 else
                 {
@@ -148,6 +177,7 @@ public class GameManager : MonoBehaviour
                     PlayerData.Instance.AddSoftCurrency(10);
                     PlayerData.Instance.AddExperience(200);
                     PlayerData.Instance.GainRating(Random.Range(500, 1000));
+                    IsPlayerWin = true;
                 }
                     break;
 
@@ -159,6 +189,7 @@ public class GameManager : MonoBehaviour
                     PlayerData.Instance.AddSoftCurrency(10);
                     PlayerData.Instance.AddExperience(200);
                     PlayerData.Instance.GainRating(Random.Range(500, 1000));
+                    IsPlayerWin = true;
                 }
                 else
                 {
@@ -166,6 +197,7 @@ public class GameManager : MonoBehaviour
                     PlayerData.Instance.AddSoftCurrency(1);
                     PlayerData.Instance.AddExperience(100);
                     PlayerData.Instance.GainRating(Random.Range(100, 500));
+                    IsPlayerWin = false;
                 }
                 break;
             default:

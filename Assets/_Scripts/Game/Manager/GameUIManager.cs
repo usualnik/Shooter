@@ -77,6 +77,8 @@ public class GameUIManager : MonoBehaviour
 
     private void ShowEndGamePanel()
     {
+        AudioManager.Instance.Play("RatingUp");
+
         _endGamePanel.SetActive(true);
     }
     private IEnumerator HideStartGamePanel()

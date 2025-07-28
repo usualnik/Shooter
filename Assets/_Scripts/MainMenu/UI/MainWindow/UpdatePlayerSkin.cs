@@ -2,12 +2,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UpdatePlayerSkin : MonoBehaviour
-{   
-    private SpriteRenderer _spriteRenderer;
+{
+    //private SpriteRenderer _spriteRenderer;
+    private Image _image;
 
     private void Awake()
     {        
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+       // _spriteRenderer = GetComponent<SpriteRenderer>();
+       _image = GetComponent<Image>();
     }
 
     void Start()
@@ -20,6 +22,11 @@ public class UpdatePlayerSkin : MonoBehaviour
         PlayerData.Instance.OnPlayerSkinChanged -= PlayerData_OnPlayerSkinChanged;
     }
 
+    private void OnEnable()
+    {
+        UpdatePlayerVisuals();
+    }
+
     private void PlayerData_OnPlayerSkinChanged()
     {
         UpdatePlayerVisuals();
@@ -27,6 +34,6 @@ public class UpdatePlayerSkin : MonoBehaviour
     
     void UpdatePlayerVisuals()
     {        
-        _spriteRenderer.sprite = PlayerData.Instance.GetSkinDataSO().SkinSprite;
+        _image.sprite = PlayerData.Instance.GetSkinDataSO().SkinSprite;
     }
 }

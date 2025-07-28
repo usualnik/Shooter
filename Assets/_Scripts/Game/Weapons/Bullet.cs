@@ -16,6 +16,8 @@ public class Bullet : MonoBehaviour
 
     public void Initialize(Vector2 shootDirection)
     {
+        PlayBulletSound();
+
         if (shootDirection == Vector2.zero)
         {
             shootDirection = Vector2.right; // by default we shoot to the right
@@ -57,4 +59,32 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void PlayBulletSound()
+    {
+        switch (_bulletTypeSO.ItemName)
+        {
+            case "RevolverAmmo":
+                AudioManager.Instance.Play("RevolverShot");
+                break;
+            case "ShotgunAmmo":
+                AudioManager.Instance.Play("ShotgunShot");
+                break;
+            case "RifleAmmo":
+                AudioManager.Instance.Play("RifleShot");
+                break;
+            case "BlasterAmmo":
+                AudioManager.Instance.Play("BlasterShot");
+                break;
+            case "ElectroGunAmmo":
+                AudioManager.Instance.Play("ElectroGunShot");
+                break;
+            case "MachinegunAmmo":
+                AudioManager.Instance.Play("MachinegunShot");
+                    break;
+            default:
+                break;
+        }
+    }
+
 }

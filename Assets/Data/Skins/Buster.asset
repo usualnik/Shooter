@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Buster
   m_EditorClassIdentifier: 
   Name: Buster
-  SkinSprite: {fileID: 2020570437271135565, guid: cb91cd84537a2fc48a1fb6b32b510ce8, type: 3}
+  SkinSprite: {fileID: -5486078719165708345, guid: 024c4801fc07d7a458fa7b75d67daa54, type: 3}
   AnimatorController: {fileID: 22100000, guid: 82caaf05338f59d4aa3440bd11821e3d, type: 2}
