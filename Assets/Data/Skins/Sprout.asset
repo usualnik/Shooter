@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Sprout
   m_EditorClassIdentifier: 
   Name: Sprout
+  RuName: "\u0421\u043F\u0440\u0443\u0442"
   SkinSprite: {fileID: -6779398019146537754, guid: c91c3da9bb0983b4e97faa5436aa6b26, type: 3}
   AnimatorController: {fileID: 22100000, guid: 7e6cd2362812b964b84558aedee9478a, type: 2}

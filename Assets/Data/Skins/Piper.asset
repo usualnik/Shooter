@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Piper
   m_EditorClassIdentifier: 
   Name: Piper
+  RuName: "\u041F\u0430\u0439\u043F\u0435\u0440"
   SkinSprite: {fileID: -1059685734279760170, guid: 63802ddca69af6849a759441ffdc3d39, type: 3}
   AnimatorController: {fileID: 22100000, guid: be6f9f0528fe4064a97bd369c8389afa, type: 2}

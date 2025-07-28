@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Cordelius
   m_EditorClassIdentifier: 
   Name: Cordelius
+  RuName: "\u041A\u043E\u0440\u0434\u0435\u043B\u0438\u0443\u0441"
   SkinSprite: {fileID: -3980584893411764963, guid: 2447c02a5a1c1314c924d2f3d6083dc4, type: 3}
   AnimatorController: {fileID: 22100000, guid: 6d3fab56925ca394793f60733330d12e, type: 2}

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Colette
   m_EditorClassIdentifier: 
   Name: Colette
+  RuName: "\u041A\u043E\u043B\u0435\u0442\u0442"
   SkinSprite: {fileID: 2562682019509191261, guid: 445c719e1bfb84d4d935bbc97a9e5b26, type: 3}
   AnimatorController: {fileID: 22100000, guid: 5db174c8f7b2e9348ab7cbddfe7dc4bb, type: 2}

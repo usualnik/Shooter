@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Belle
   m_EditorClassIdentifier: 
   Name: Belle
+  RuName: "\u0411\u0435\u043B\u043B\u0430"
   SkinSprite: {fileID: 2441790120379367480, guid: bf2fea0d2a9e9d449b35d902918487a9, type: 3}
   AnimatorController: {fileID: 22100000, guid: 4ff3c2b412e1a9645927e2e1a6237edd, type: 2}

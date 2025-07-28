@@ -6,6 +6,8 @@ public class BackgroundMusic : MonoBehaviour
 
     private AudioSource _audioSource;
 
+    private bool _isPlaying;
+
     void Awake()
     {
         if (Instance == null)
@@ -22,6 +24,23 @@ public class BackgroundMusic : MonoBehaviour
 
         _audioSource = GetComponent<AudioSource>();
 
+        _isPlaying = true;
+
+    }
+
+    public void ToggleMute()
+    {       
+
+        if (_isPlaying)
+        {
+            _isPlaying = false;
+            _audioSource.mute = true;
+        }
+        else
+        {
+            _isPlaying = true;
+            _audioSource.mute = false;
+        }
     }
 
 }

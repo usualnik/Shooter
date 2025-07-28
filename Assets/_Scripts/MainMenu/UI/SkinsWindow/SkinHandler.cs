@@ -1,16 +1,20 @@
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SkinHandler : MonoBehaviour
 {
+    public SkinDataSO UnlockedSkinData;
+   
     [SerializeField] private Image[] images;
     [SerializeField] private List<ChooseSkinButton> unlockedButtons;
     [SerializeField] private Image _currentlySelectedImage; 
 
     private Color _selectedColor = Color.red;
     private Color _color = Color.white;
+
 
     private void Start()
     {
@@ -51,8 +55,10 @@ public class SkinHandler : MonoBehaviour
 
         button.SetUnlocked();
         button.RemoveLockIcon();
-        unlockedButtons.Add(button);
-         
+        unlockedButtons.Add(button);        
+        
+        UnlockedSkinData = button.GetSkinData();
+
         UpdateButtonsUi();             
         
     }

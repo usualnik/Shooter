@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Pearl
   m_EditorClassIdentifier: 
   Name: Pearl
+  RuName: "\u041F\u0435\u0440\u043B"
   SkinSprite: {fileID: -8478649634832004758, guid: 88222bff72a25754793a28490649405d, type: 3}
   AnimatorController: {fileID: 22100000, guid: f4c12637a8bc85f4bb5a690178dfcd31, type: 2}

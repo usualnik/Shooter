@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Pam
   m_EditorClassIdentifier: 
   Name: Pam
+  RuName: "\u041F\u044D\u043C"
   SkinSprite: {fileID: 5170373813091478614, guid: 5460a4b98c78e034faaf19d9863ff449, type: 3}
   AnimatorController: {fileID: 22100000, guid: 2064471529bd64f41bb415ac46f204b3, type: 2}

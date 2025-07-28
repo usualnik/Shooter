@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Monkey
   m_EditorClassIdentifier: 
   Name: Monkey
+  RuName: "\u041E\u0431\u0435\u0437\u044C\u044F\u043D\u0430"
   SkinSprite: {fileID: 2208213840967403015, guid: 64298c8ae571cbe4085125a65c291a4d, type: 3}
   AnimatorController: {fileID: 22100000, guid: 9623680403a3ac64b8cc882b5321f610, type: 2}

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: MrP
   m_EditorClassIdentifier: 
   Name: MrP
+  RuName: "\u041C\u0440\u041F"
   SkinSprite: {fileID: -1946666112549675893, guid: f4012370442bec84797daff9dfe1a358, type: 3}
   AnimatorController: {fileID: 22100000, guid: 4c2aa7b3588a69c41ba7c0ecca447ca3, type: 2}

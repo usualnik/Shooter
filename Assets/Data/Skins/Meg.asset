@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Meg
   m_EditorClassIdentifier: 
   Name: Meg
+  RuName: "\u041C\u0435\u0433"
   SkinSprite: {fileID: -6245744221097277619, guid: cc4a61969418e81499c46762279a9b0c, type: 3}
   AnimatorController: {fileID: 22100000, guid: 2ecc07edc98e3a44fa51c00f3e96301b, type: 2}

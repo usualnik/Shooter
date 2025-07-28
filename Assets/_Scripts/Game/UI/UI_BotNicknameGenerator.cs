@@ -4,15 +4,22 @@ using System.Collections.Generic;
 public class NicknameGenerator : MonoBehaviour
 {
     public static NicknameGenerator Instance;
-
-    // —писок возможных никнеймов дл€ ботов
+        
     private List<string> botNicknames = new List<string>()
     {
-        "Shadow", "Blaze", "Rogue", "Viper", "Neon",
-        "Phantom", "Cyber", "Titan", "Raven", "Ghost",
-        "Storm", "Wraith", "Frost", "Hunter", "Vortex"
+        "HeadshotHarry", "NoScopeNeil", "FragMaster", "CampingCarl", "360NoScope",
+        "DriftKing", "OneTapTony", "MrStealYoKill", "LagSwitch",
+        "WifiWarrior", "PingAbuser", "AimbotAndy", "ToxicTimmy", "CarryMePlz",
+        "PotatoAim", "FlashbangFred", "YoloSwag", "TryhardTerry", "CheekiBreeki",
+        "BunnyHopGod", "CrouchSpammer", "DesyncDennis", "PeekerAdvantage", "TarkovTurtle", "JohnWick",
+        "MLGPro", "ClutchOrKick", "KillConfirmed",
+        "ѕул€Ќа»злете", " риворукий", "“упиксон", "„итер¬ќтпуске", "ѕатроны ончились",
+        "јгентћафии", "√роза“уалетов", "ƒед»нсайд", "∆ивчик",
+        "«аточкаƒл€¬рага", "«лой лоун", " апитанќчевидность", " иллер»зѕодвала", "Ћагћен€Ѕесит",
+        "ћимо илла", "ќпасный’ом€к", "ѕаникаЌаЋинии", "–ыцарьƒивана",
+        "—найпер—ƒивана", "“анкЌаћинималках", "”пырь", "‘рагер«аƒеньгиƒа", "’ом€кѕод√ранатой",
+        "÷ельс€¬ыше", "„ерепажка", "Ўакалист", "я∆оЅоец", "«ќќ √ўј—“№я"
     };
-
 
     private void Awake()
     {
@@ -22,7 +29,7 @@ public class NicknameGenerator : MonoBehaviour
             Destroy(gameObject);
     }
 
-    // ћетод дл€ получени€ случайного ника
+   
     public string GetRandomNickname()
     {
         if (botNicknames.Count == 0)

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Gray
   m_EditorClassIdentifier: 
   Name: Gray
+  RuName: "\u0413\u0440\u0435\u0439"
   SkinSprite: {fileID: -5673685427814307840, guid: 76c1fa9e84d2b0f4d9c13813f1914913, type: 3}
   AnimatorController: {fileID: 22100000, guid: 34710b72b3cf2c74cbeff25f1362aafb, type: 2}

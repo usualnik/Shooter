@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Bibi
   m_EditorClassIdentifier: 
   Name: Bibi
+  RuName: "\u0411\u0438\u0431\u0438"
   SkinSprite: {fileID: 21300000, guid: 8aa8f331477b828459da01e5bdb22a39, type: 3}
   AnimatorController: {fileID: 22100000, guid: ac5c34f8a7dd76445b820058f58e0262, type: 2}

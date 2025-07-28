@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Gene
   m_EditorClassIdentifier: 
   Name: Gene
+  RuName: "\u0413\u0435\u043D\u0435"
   SkinSprite: {fileID: 5905165242759943857, guid: 7bb2c0a32e0bd1541bed7e643c79ba16, type: 3}
   AnimatorController: {fileID: 22100000, guid: 878cb3db950bb3d4c8dff11198de5a45, type: 2}

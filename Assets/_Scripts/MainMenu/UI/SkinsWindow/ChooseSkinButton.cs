@@ -5,10 +5,11 @@ using UnityEngine.UI;
 public class ChooseSkinButton : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private SkinDataSO skinDataSO;
-    [SerializeField] private Image _skinPreview;
-    [SerializeField] private SkinHandler _selectedButtonHandler;
+    [SerializeField] private Image _skinPreview;   
     [SerializeField] private bool _isUnlocked;
     [SerializeField] private GameObject _lockIcon;
+
+    [SerializeField] private SkinHandler _skinHandler;
 
     private Image _buttonImage;
 
@@ -24,7 +25,7 @@ public class ChooseSkinButton : MonoBehaviour, IPointerClickHandler
 
         if (_isUnlocked)
         {
-            _selectedButtonHandler.UpdateButtonColor(_buttonImage);
+            _skinHandler.UpdateButtonColor(_buttonImage);
             _lockIcon.SetActive(false);
 
         }
@@ -36,7 +37,7 @@ public class ChooseSkinButton : MonoBehaviour, IPointerClickHandler
         if (_isUnlocked)
         {
             SetPlayerSkinData();
-            _selectedButtonHandler.UpdateButtonColor(_buttonImage);
+            _skinHandler.UpdateButtonColor(_buttonImage);
         }      
     }
 
@@ -52,4 +53,5 @@ public class ChooseSkinButton : MonoBehaviour, IPointerClickHandler
 
     public bool IsUnlocked() { return _isUnlocked; }
     public void SetUnlocked() { _isUnlocked = true; }
+    public SkinDataSO GetSkinData() { return skinDataSO; }
 }

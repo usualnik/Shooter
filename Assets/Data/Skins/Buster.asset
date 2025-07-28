@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Buster
   m_EditorClassIdentifier: 
   Name: Buster
+  RuName: "\u0411\u0443\u0441\u0442\u0435\u0440"
   SkinSprite: {fileID: -5486078719165708345, guid: 024c4801fc07d7a458fa7b75d67daa54, type: 3}
   AnimatorController: {fileID: 22100000, guid: 82caaf05338f59d4aa3440bd11821e3d, type: 2}

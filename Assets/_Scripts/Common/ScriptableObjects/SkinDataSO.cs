@@ -4,6 +4,7 @@ using UnityEngine;
 public class SkinDataSO : ScriptableObject
 {
     public string Name;
+    public string RuName;
     public Sprite SkinSprite;
     public AnimatorOverrideController AnimatorController;
 }

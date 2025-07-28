@@ -16,7 +16,7 @@ public class AudioManager : MonoBehaviour
     }
 
     [SerializeField] private List<Sound> sounds = new List<Sound>();
-    private bool isMuted = false;
+    private bool _isPlaying;
 
     private void Awake()
     {
@@ -39,6 +39,8 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.loop = s.loop;
         }
+
+        _isPlaying = true;
     }
   
     public void Play(string soundName)
@@ -65,14 +67,28 @@ public class AudioManager : MonoBehaviour
 
     public void ToggleMute()
     {
-        isMuted = !isMuted;  
-
-        foreach (Sound s in sounds)
+        if (_isPlaying)
         {
-            s.source.volume = isMuted ? 0 : s.volume;
+            _isPlaying = false;
+
+            foreach (Sound s in sounds)
+            {
+                s.source.mute = true;
+            }
         }
+        else
+        {
+            _isPlaying = true;
+
+            foreach (Sound s in sounds)
+            {
+                s.source.mute = false;
+            }
+        }
+
+       
     }
    
-    public bool IsMuted() => isMuted;
+    public bool IsPlaying() => _isPlaying;
    
 }

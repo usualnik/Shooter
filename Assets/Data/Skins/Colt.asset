@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Colt
   m_EditorClassIdentifier: 
   Name: Colt
+  RuName: "\u041A\u043E\u043B\u044C\u0442"
   SkinSprite: {fileID: -8404016113606465912, guid: 664cd5ec7f82f1a4db68b835741f2d60, type: 3}
   AnimatorController: {fileID: 22100000, guid: 7c932e3a16fa5ae49a578333c2897c26, type: 2}
