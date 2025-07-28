@@ -2,19 +2,26 @@ using UnityEngine;
 
 public class BackgroundMusic : MonoBehaviour
 {
+    public static BackgroundMusic Instance { get; private set; }
+
     private AudioSource _audioSource;
-    
+
     void Awake()
-    {      
-        _audioSource = GetComponent<AudioSource>();
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 
         DontDestroyOnLoad(gameObject);
-    }
 
-    private void Start()
-    {
-        // if music is muted - mute backgound
-    }
 
+        _audioSource = GetComponent<AudioSource>();
+
+    }
 
 }

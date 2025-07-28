@@ -197,7 +197,7 @@ MonoBehaviour:
     SkinData: {fileID: 11400000, guid: 4718844776e24fc4f97e45d7caee344c, type: 2}
     NickName: NICKNAME
     Rating: 99999
-    SoftCurrency: 200
+    SoftCurrency: 0
     HardCurrency: 0
     Level: 1
     CurrentExperience: 0

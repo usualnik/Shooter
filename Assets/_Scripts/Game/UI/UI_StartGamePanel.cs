@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using YG;
 
 public class UI_StartGamePanel : MonoBehaviour
 {
@@ -41,6 +42,10 @@ public class UI_StartGamePanel : MonoBehaviour
     private void UpdatePlayerText()
     {
         int maxPlayers = (GameManager.Instance.Mode == GameManager.GameMode.ThreeVsThree) ? ThreeVsThreePlayersMax : BossPlayersMax;
-        _playersText.text = $"{Mathf.FloorToInt(playersFound)}\\{maxPlayers}";
+       
+        if(YG2.envir.language == "ru")
+            _playersText.text = $"Игроков: {Mathf.FloorToInt(playersFound)}\\{maxPlayers}";
+        else
+            _playersText.text = $"Players: {Mathf.FloorToInt(playersFound)}\\{maxPlayers}";
     }
 }

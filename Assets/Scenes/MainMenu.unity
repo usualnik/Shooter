@@ -3160,32 +3160,32 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: RevolverShot
-    clip: {fileID: 8300000, guid: 580177265d6e3894088b2209c540b397, type: 3}
+    clip: {fileID: 8300000, guid: 31c762e1276f4ee408686f7439e0287d, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}
   - name: ShotgunShot
-    clip: {fileID: 8300000, guid: 14eda0d0250ff5f42b91ee3d0e953732, type: 3}
+    clip: {fileID: 8300000, guid: c97afd7473c2b5743829070d8622162e, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}
   - name: RifleShot
-    clip: {fileID: 8300000, guid: 70c5076ac09270b49940b7a571a954d2, type: 3}
+    clip: {fileID: 8300000, guid: 8e0348ed9d265af448b6a870e18811f9, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}
   - name: BlasterShot
-    clip: {fileID: 8300000, guid: d139942ba062dbc4fb256778e28fe6bb, type: 3}
+    clip: {fileID: 8300000, guid: dc96065160be71046bc3eea5ef55898a, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}
   - name: ElectroGunShot
-    clip: {fileID: 8300000, guid: 47697e36b2c4e2c46a788122f76064ac, type: 3}
+    clip: {fileID: 8300000, guid: 7c84addf2e0fa83449829998c4780584, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}
   - name: MachinegunShot
-    clip: {fileID: 8300000, guid: 39e3f7720b6cdc64389cffb5807385a3, type: 3}
+    clip: {fileID: 8300000, guid: 713048400c822ea43a3c5da5e568f55b, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}
