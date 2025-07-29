@@ -14,7 +14,7 @@ public class Player : MonoBehaviour , IDamageable
    
     
     private const int HealAmount = 20;
-    private const int PlayerBossMaxHealth = 10000;
+    private const int PlayerBossMaxHealth = 5000;
 
     private int MaxHealth;
     private float _healingTimer;

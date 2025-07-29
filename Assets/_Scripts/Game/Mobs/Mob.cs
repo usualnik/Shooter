@@ -10,7 +10,7 @@ public class Mob : MonoBehaviour , IDamageable
     
     
     private const int MaxHealth = 100;
-    private const int MobBossMaxHealth = 10000;
+    private const int MobBossMaxHealth = 5000;
 
     //private const float DeathTimer = 0.1f;
 

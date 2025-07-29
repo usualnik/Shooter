@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using YG;
 
 [System.Serializable]
 public class Data
@@ -170,12 +171,18 @@ public class PlayerData : MonoBehaviour
     {
         data.SoftCurrency += value;
 
+        YG2.saves.softCurrency = data.SoftCurrency; // Save value to yandex cloud
+        YG2.SaveProgress();
+
         OnPlayerSoftCurrencyChanged?.Invoke();
     }
     public void AddHardCurrency(int value) 
     { 
         data.HardCurrency += value; 
-    
+
+        YG2.saves.hardCurrency = data.HardCurrency; // Save value to yandex cloud
+        YG2.SaveProgress();
+
         OnPlayerHardCurrencyChanged?.Invoke();
     }
     public void GainRating(int value) => data.Rating += -value;
@@ -190,6 +197,16 @@ public class PlayerData : MonoBehaviour
 
         OnPlayerSkinChanged?.Invoke();
     }
+
+    //Used by Yandex save/load system
+    public void SetSoftCurrency(int value) { data.SoftCurrency = value; }
+    public void SetHardCurrency(int value) { data.HardCurrency = value; }
+
+
+
+
+
+
     #endregion
 
 }
