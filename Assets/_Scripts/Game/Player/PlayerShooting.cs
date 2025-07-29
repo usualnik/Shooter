@@ -4,10 +4,11 @@ using UnityEngine;
 public class PlayerShooting : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private float _shootCooldown = 1.5f;   
+    [SerializeField] private float _shootCooldown = 1.5f;
+    [SerializeField] private GameObject _currentWeaponPrefab;
+
 
     private Joystick _shootingJoystick;
-    private GameObject _currentWeaponPrefab;
 
     private float _lastShootTime;
 

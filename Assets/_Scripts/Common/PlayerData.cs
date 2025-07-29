@@ -5,6 +5,8 @@ using YG;
 [System.Serializable]
 public class Data
 {
+    public bool IsFirstTimePlayed;
+
     public WeaponSO WeaponData;
     public SkinDataSO SkinData;
 
@@ -109,6 +111,8 @@ public class PlayerData : MonoBehaviour
 
     public SkinDataSO GetSkinDataSO() => data.SkinData;
 
+    public bool GetIsFirstTimePlayed() => data.IsFirstTimePlayed;
+
     #endregion
 
     #region Add
@@ -171,7 +175,7 @@ public class PlayerData : MonoBehaviour
     {
         data.SoftCurrency += value;
 
-        YG2.saves.softCurrency = data.SoftCurrency; // Save value to yandex cloud
+        YG2.saves.SoftCurrency = data.SoftCurrency; // Save value to yandex cloud
         YG2.SaveProgress();
 
         OnPlayerSoftCurrencyChanged?.Invoke();
@@ -180,7 +184,7 @@ public class PlayerData : MonoBehaviour
     { 
         data.HardCurrency += value; 
 
-        YG2.saves.hardCurrency = data.HardCurrency; // Save value to yandex cloud
+        YG2.saves.HardCurrency = data.HardCurrency; // Save value to yandex cloud
         YG2.SaveProgress();
 
         OnPlayerHardCurrencyChanged?.Invoke();
@@ -201,11 +205,10 @@ public class PlayerData : MonoBehaviour
     //Used by Yandex save/load system
     public void SetSoftCurrency(int value) { data.SoftCurrency = value; }
     public void SetHardCurrency(int value) { data.HardCurrency = value; }
-
-
-
-
-
+    public void SetFirstTimePlayed(bool value)
+    {
+        data.IsFirstTimePlayed = value;
+    }
 
     #endregion
 

@@ -29,9 +29,7 @@ public class Player : MonoBehaviour , IDamageable
 
         _playerShooting = GetComponent<PlayerShooting>();
 
-        MaxHealth = PlayerData.Instance.GetHealth();
-
-        
+        MaxHealth = PlayerData.Instance.GetHealth();        
 
 
         _currentHealth = MaxHealth;

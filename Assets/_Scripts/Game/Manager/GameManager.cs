@@ -1,5 +1,4 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
@@ -9,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public event Action<GameMode> OnGameStarted;
     public event Action OnGameEneded;
+
 
     public static GameManager Instance { get; private set; }
     public bool IsMobilePlatform {  get; private set; }
@@ -21,7 +21,8 @@ public class GameManager : MonoBehaviour
     public int PreviousRating { get; private set; }
     public int PreviousCurrency { get; private set; }
 
-    [SerializeField] private GameMode _mode;    
+    [SerializeField] private GameMode _mode;
+    [SerializeField] private bool _isTutorial;
     
     private GameData _currentGameData;
 
@@ -49,10 +50,21 @@ public class GameManager : MonoBehaviour
             Debug.LogError("More than one instance od GameManager");
         }
 
-        ChooseRandomGameMode();
-        IsMobilePlatform = Application.isMobilePlatform;
-        EndGameTimerMax = 90;      
-        Mode = _mode;        
+        if (_isTutorial)
+        {
+            IsMobilePlatform = Application.isMobilePlatform;
+            EndGameTimerMax = 90;
+            Mode = GameMode.ThreeVsThree;
+        }
+        else
+        {
+            ChooseRandomGameMode();
+            IsMobilePlatform = Application.isMobilePlatform;
+            EndGameTimerMax = 90;
+            Mode = _mode;
+        }
+
+             
     }
 
     private void Start()

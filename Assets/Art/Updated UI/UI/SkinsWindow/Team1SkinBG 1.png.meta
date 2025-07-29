@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 93ae2b6db21e9a34eae9b630fdde3d23
+guid: f82a3d2adb06cea4c8a33705dc32222e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6145112197449774322
-    second: Team1SkinBG_0
+      213: 7704067366697567061
+    second: Team1SkinBG 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Team1SkinBG_0
+      name: Team1SkinBG 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f4f9e14cf2d74550800000000000000
-      internalID: 6145112197449774322
+      spriteID: 55300bdb3785aea60800000000000000
+      internalID: 7704067366697567061
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Team1SkinBG_0: 6145112197449774322
+      Team1SkinBG 1_0: 7704067366697567061
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

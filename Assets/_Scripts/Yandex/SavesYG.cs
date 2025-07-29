@@ -2,7 +2,8 @@ namespace YG
 {
     public partial class SavesYG
     {
-        public int softCurrency = 0;
-        public int hardCurrency = 0;
+        public int SoftCurrency = 0;
+        public int HardCurrency = 0;
+        public bool IsFirstTimePlayed = true;
     }
 }
