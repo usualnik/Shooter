@@ -60,5 +60,8 @@ TagManager:
   - name: Mob
     uniqueID: 2517185155
     locked: 0
+  - name: EnvExtra
+    uniqueID: 2733846999
+    locked: 0
   m_RenderingLayers:
   - Default

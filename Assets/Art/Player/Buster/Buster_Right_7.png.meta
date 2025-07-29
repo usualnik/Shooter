@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Buster_Right_7_0: 7254580628987598878
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

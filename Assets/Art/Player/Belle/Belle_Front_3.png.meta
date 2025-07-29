@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Belle_Front_3_0: 2441790120379367480
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cordelius_Front_hand_0: 3154812653782774734
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Colt_Right_2_0: 1283676901983902205
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
