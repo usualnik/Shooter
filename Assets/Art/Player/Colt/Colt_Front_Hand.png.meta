@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Colt_Front_Hand_0: -8407509378294473299
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

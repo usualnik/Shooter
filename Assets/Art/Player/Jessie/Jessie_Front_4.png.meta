@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Jessie_Front_4_0: 7221712447594339775
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Monkey_Front_4_0: -932515985582505943
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

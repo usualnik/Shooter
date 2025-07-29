@@ -185,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Jessie_Front_Hand_0: -8358320622592676354
+      Jessie_Front_Hand_1: 7023101239974838401
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
