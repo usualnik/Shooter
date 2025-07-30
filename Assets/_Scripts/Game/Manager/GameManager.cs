@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
+using YG;
 
 
 public class GameManager : MonoBehaviour
@@ -223,6 +224,7 @@ public class GameManager : MonoBehaviour
 
     private void LoadMainMenu()
     {
+        YG2.InterstitialAdvShow();
         SceneManager.LoadScene(MainMenuBuildIndex);
     }
 

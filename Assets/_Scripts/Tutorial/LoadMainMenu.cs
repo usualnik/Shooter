@@ -19,6 +19,12 @@ public class LoadMainMenu : MonoBehaviour
     private void Target_OnRespawn(object sender, System.EventArgs e)
     {
         _loadingScreen.SetActive(true);
+
+        Invoke("LoadMenu", 0.1f);
+    }
+
+    private void LoadMenu()
+    {
         SceneManager.LoadScene(MainMenuIndex);
     }
 }

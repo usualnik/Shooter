@@ -182,7 +182,7 @@ public class PlayerData : MonoBehaviour
     }
     public void AddHardCurrency(int value) 
     { 
-        data.HardCurrency += value; 
+        data.HardCurrency += value;
 
         YG2.saves.HardCurrency = data.HardCurrency; // Save value to yandex cloud
         YG2.SaveProgress();

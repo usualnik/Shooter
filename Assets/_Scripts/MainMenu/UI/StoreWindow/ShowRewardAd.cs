@@ -25,11 +25,11 @@ public class ShowRewardAd : MonoBehaviour
 
     public void MyRewardAdvShow()
     {
-       
+
         YG2.RewardedAdvShow(rewardID, () =>
         {
             PlayerData.Instance.AddHardCurrency(HardCurrencyRewardValue);
-                        
+
         });
     }
 }

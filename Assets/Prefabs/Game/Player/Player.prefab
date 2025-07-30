@@ -697,6 +697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootCooldown: 1.5
+  _currentWeaponPrefab: {fileID: 0}
 --- !u!70 &5522216391372787690
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -24,18 +24,20 @@ public class UI_MusicButton : MonoBehaviour
 
     private void Start()
     {
-        _musicButton.onClick.AddListener(ChangeSprite);
+        _musicButton.onClick.AddListener(ToggleSound);
 
     }
 
     private void OnDestroy()
     {
-        _musicButton.onClick.RemoveListener(ChangeSprite);
+        _musicButton.onClick.RemoveListener(ToggleSound);
 
     }
 
-    private void ChangeSprite()
+    private void ToggleSound()
     {
+        BackgroundMusic.Instance.ToggleMute();
+
         if (_isPlaying)
         {
             _buttonImage.sprite = _musicOffSprite;

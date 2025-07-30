@@ -27,9 +27,9 @@ public class UI_EndGamePanel : MonoBehaviour
 
     private void UpdateEndGameText()
     {
-        _scoreText.text = $"{GameUIManager.Instance.GetPlayerTeamScore().ToString()} | {GameUIManager.Instance.GetEnemyTeamScore().ToString()}";
+        //_scoreText.text = $"{GameUIManager.Instance.GetPlayerTeamScore().ToString()} | {GameUIManager.Instance.GetEnemyTeamScore().ToString()}";
 
-        ShowResultText();
+       Invoke("ShowResultText", 0.1f);
 
         ShowRatingText();       
         ShowCurrencyText();        
@@ -39,7 +39,7 @@ public class UI_EndGamePanel : MonoBehaviour
     {
         if (GameManager.Instance.IsEqualScore)
         {
-            if(YG2.envir.language == "ru")
+            if (YG2.envir.language == "ru")
                 _resultText.text = $"ÍÈ×Üß!!!";
             else
                 _resultText.text = $"DRAW!!!";
@@ -106,7 +106,7 @@ public class UI_EndGamePanel : MonoBehaviour
         while (elapsedTime < animationDuration)
         {
             _currentCurrency = (int)Mathf.Lerp(startCurrency, _targetCurrency, elapsedTime / animationDuration);
-            _softCurrencyText.text = _currentCurrency.ToString();
+            _softCurrencyText.text = _currentCurrency.ToString("d4");
 
             elapsedTime += Time.deltaTime;
             yield return null;

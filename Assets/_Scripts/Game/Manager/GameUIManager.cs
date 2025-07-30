@@ -88,16 +88,16 @@ public class GameUIManager : MonoBehaviour
     }
 
     public void AddScore(string tag)
-    {
+    {        
         switch (tag)
         {
-            case PlayerTeamTag:
-                _playerTeamScore++;
-                _playerTeamScoreText.text = _playerTeamScore.ToString();
-                break;
-            case EnemyTeamTag:
+            case PlayerTeamTag:                
                 _enemyTeamScore++;
                 _enemyTeamScoreText.text = _enemyTeamScore.ToString();
+                break;
+            case EnemyTeamTag:
+                _playerTeamScore++;
+                _playerTeamScoreText.text = _playerTeamScore.ToString();
                 break;
             default:
                 break;
@@ -105,8 +105,7 @@ public class GameUIManager : MonoBehaviour
     }
 
     private void Update()
-    {
-        //_gameTimerText.text = GameManager.Instance.EndGameTimerMax.ToString("0");
+    {      
        
         int minutes = Mathf.FloorToInt(GameManager.Instance.EndGameTimerMax / 60);
         int seconds = Mathf.FloorToInt(GameManager.Instance.EndGameTimerMax % 60);

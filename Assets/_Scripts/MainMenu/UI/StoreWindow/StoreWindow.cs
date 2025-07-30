@@ -43,13 +43,13 @@ public class StoreWindow : MonoBehaviour
 
     private void ShowNewSkinInfo()
     {
-        if(YG2.envir.language == "ru")
+        if (YG2.envir.language == "ru")
         {
-            _newSkinText.text = _skinHandler.UnlockedSkinData.RuName;           
+            _newSkinText.text = _skinHandler.UnlockedSkinData.RuName;
         }
         else
         {
-            _newSkinText.text = _skinHandler.UnlockedSkinData.Name;           
+            _newSkinText.text = _skinHandler.UnlockedSkinData.Name;
         }
 
         _newSkinImage.sprite = _skinHandler.UnlockedSkinData.SkinSprite;
