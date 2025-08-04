@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using YG;
 
@@ -8,9 +9,13 @@ public class Data
     public bool IsFirstTimePlayed;
 
     public WeaponSO WeaponData;
-    public SkinDataSO SkinData;
-
+    public SkinDataSO SkinData;        
+    
     public string NickName = "NickName";
+
+    //Skins and weapons
+    public List<int> UnlockedSkinsIndexes;
+    public List<int> UnlockedWeaponsIndexes;
 
     public int Rating = 99999;
         
@@ -61,6 +66,7 @@ public class PlayerData : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
+
         // Init rating for the first time 
         if (data.Rating == 99999)
         {
@@ -71,11 +77,35 @@ public class PlayerData : MonoBehaviour
         {
             data.Rating = 1;
         }
+
+
+        InitIsFirstTimePlayed();
+
+        InitUnlockedSkins();
+
+        InitUnlockedWeapons();    
+    }
+
+    private void InitIsFirstTimePlayed()
+    {
+        data.IsFirstTimePlayed = YG2.saves.AlreadyPlayed ? false : true;
+    }
+
+    private void InitUnlockedSkins()
+    {
+        data.UnlockedSkinsIndexes = new List<int>();
+        data.UnlockedSkinsIndexes.Add(0); // add default skin
+    }
+
+    private void InitUnlockedWeapons()
+    {
+        data.UnlockedWeaponsIndexes = new List<int>();
+        data.UnlockedWeaponsIndexes.Add(0); // add default gun   
     }
 
     private void InitRating()
     {
-        data.Rating = UnityEngine.Random.Range(22283, 25381);
+        data.Rating = UnityEngine.Random.Range(22283, 25381);        
     }
 
     private void LevelUp()
@@ -84,13 +114,8 @@ public class PlayerData : MonoBehaviour
         data.CurrentExperience = 0;
         data.MaxExperience *= ExperienceMultiplier;
         data.LevelPoints += 5;
-
+        SavePlayerDataToCloud();
         OnLevelUp?.Invoke();
-    }
-   
-    public void SetPlayerWeaponData(WeaponSO weaponData)
-    {
-        data.WeaponData = weaponData;
     }
 
 
@@ -107,25 +132,26 @@ public class PlayerData : MonoBehaviour
     public int GetHardCurrency() => data.HardCurrency;
     public int GetRating() => data.Rating;
     public WeaponSO GetCurrentGunSO() => data.WeaponData;
-    public string GetNickName() => data.NickName;
-
+    public string GetNickName() => data.NickName;    
     public SkinDataSO GetSkinDataSO() => data.SkinData;
+    public List<int> GetUnlockedSkinsIndexesList() => data.UnlockedSkinsIndexes;
+    public List<int> GetUnlockedWeaponsIndexesList() => data.UnlockedWeaponsIndexes;
 
     public bool GetIsFirstTimePlayed() => data.IsFirstTimePlayed;
 
     #endregion
 
     #region Add
-    public void AddHealth(int value) 
+    public void AddHealth(int value)
     {
-        if(data.LevelPoints > 0)
+        if (data.LevelPoints > 0)
         {
             data.LevelPoints--;
             data.Health += value;
-
+            SavePlayerDataToCloud();
             OnStatChanged?.Invoke();
         }
-       
+
     }
     public void AddDamage(float value)
     {
@@ -135,38 +161,38 @@ public class PlayerData : MonoBehaviour
             data.Damage += value;
 
             data.Damage = Mathf.Round(data.Damage * 100f) / 100f; // avoid floating value calculation mistake
-
+            SavePlayerDataToCloud();
             OnStatChanged?.Invoke();
         }
 
     }
-    public void AddCritChance(int value) 
+    public void AddCritChance(int value)
     {
         if (data.LevelPoints > 0 && data.CritChance < 100)
         {
             data.LevelPoints--;
             data.CritChance += value;
-
+            SavePlayerDataToCloud();
             OnStatChanged?.Invoke();
         }
     }
     public void AddAttackSpeed(float value)
     {
         if (data.LevelPoints > 0 && data.AttackSpeed > 0.2f)
-        {            
+        {
             data.LevelPoints--;
             data.AttackSpeed += value;
 
             data.AttackSpeed = Mathf.Round(data.AttackSpeed * 100f) / 100f; // avoid floating value calculation mistake
-
+            SavePlayerDataToCloud();
             OnStatChanged?.Invoke();
         }
     }
 
-    public void AddExperience(int value) 
-    { 
-        data.CurrentExperience += value; 
-        if(data.CurrentExperience >= data.MaxExperience)
+    public void AddExperience(int value)
+    {
+        data.CurrentExperience += value;
+        if (data.CurrentExperience >= data.MaxExperience)
         {
             LevelUp();
         }
@@ -175,39 +201,84 @@ public class PlayerData : MonoBehaviour
     {
         data.SoftCurrency += value;
 
-        YG2.saves.SoftCurrency = data.SoftCurrency; // Save value to yandex cloud
-        YG2.SaveProgress();
+        //YG2.saves.SoftCurrency = data.SoftCurrency; // Save value to yandex cloud
+        //YG2.SaveProgress();
+        SavePlayerDataToCloud();
 
         OnPlayerSoftCurrencyChanged?.Invoke();
     }
-    public void AddHardCurrency(int value) 
-    { 
+    public void AddHardCurrency(int value)
+    {
         data.HardCurrency += value;
 
-        YG2.saves.HardCurrency = data.HardCurrency; // Save value to yandex cloud
-        YG2.SaveProgress();
+        //YG2.saves.HardCurrency = data.HardCurrency; // Save value to yandex cloud
+        //YG2.SaveProgress();
+        SavePlayerDataToCloud();
 
         OnPlayerHardCurrencyChanged?.Invoke();
     }
-    public void GainRating(int value) => data.Rating += -value;
+    public void GainRating(int value)
+    {
+        data.Rating += -value;
+        SavePlayerDataToCloud();
+    }
+    public void AddUnlockedSkinIndex(int skinIndex)
+    {
+        data.UnlockedSkinsIndexes.Add(skinIndex);
+        SavePlayerDataToCloud();
+    }
+    public void AddUnlockedWeaponIndex(int weaponIndex)
+    {
+        data.UnlockedWeaponsIndexes.Add(weaponIndex);
+        SavePlayerDataToCloud();
+    }
+
     #endregion
 
-
     #region Set
-    public void SetNickname(string nickname) => data.NickName = nickname;
+    public void SetNickname(string nickname)
+    {
+        data.NickName = nickname;
+        SavePlayerDataToCloud();
+
+    }
     public void SetSkinData(SkinDataSO skinDataSO) 
     {
         data.SkinData = skinDataSO;
-
+        SavePlayerDataToCloud();
         OnPlayerSkinChanged?.Invoke();
     }
-
-    //Used by Yandex save/load system
-    public void SetSoftCurrency(int value) { data.SoftCurrency = value; }
-    public void SetHardCurrency(int value) { data.HardCurrency = value; }
-    public void SetFirstTimePlayed(bool value)
+    
+    public void SetFirstTimePlayed(bool firstTimePlayed)
     {
-        data.IsFirstTimePlayed = value;
+        data.IsFirstTimePlayed = firstTimePlayed;
+        SavePlayerDataToCloud();
+    }
+    public void SetPlayerWeaponData(WeaponSO weaponData)
+    {
+        data.WeaponData = weaponData;
+        SavePlayerDataToCloud();
+    }
+
+
+    //-----------------------------YANDES CLOUD SAVE|LOAD--------------------------------------------------
+
+    public void SetPlayerData(Data yandexServerData) 
+    {
+        if (this.data.IsFirstTimePlayed)
+        {            
+            return;           
+        }             
+        else
+        {
+            this.data = yandexServerData;            
+        }
+    }
+
+    public void SavePlayerDataToCloud()
+    {
+        YG2.saves.YandexServerData = this.data;
+        YG2.SaveProgress();
     }
 
     #endregion

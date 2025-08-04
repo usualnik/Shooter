@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class ChooseWeaponButton : MonoBehaviour
 {
     [Header("Configure cell")]
+    [SerializeField] private int _weaponIndex;
     [SerializeField] private WeaponSO WeaponData;
     [SerializeField] private Image _weaponPreview;
     [SerializeField] private bool _isUnlocked;
@@ -35,7 +36,23 @@ public class ChooseWeaponButton : MonoBehaviour
         _button.onClick.AddListener(SelectButton);
 
         _priceText.text = "$ " + _weaponPrice.ToString();
+
+        InitUnlockedWeapon();
+
     }
+
+
+    private void InitUnlockedWeapon()
+    {
+        if (PlayerData.Instance.GetUnlockedWeaponsIndexesList().Contains(_weaponIndex))
+        {
+            _lockIcon.SetActive(false);
+            _priceText.gameObject.SetActive(false);
+            _isUnlocked = true;
+        }
+    }
+
+
     private void OnDestroy()
     {
         
@@ -63,6 +80,7 @@ public class ChooseWeaponButton : MonoBehaviour
 
         PlayerData.Instance.AddSoftCurrency(-_weaponPrice);
         PlayerData.Instance.SetPlayerWeaponData(WeaponData);
+        PlayerData.Instance.AddUnlockedWeaponIndex(_weaponIndex);
         _weaponSelectedButtonHandler.UpdateColor(_buttonImage);
     }
 

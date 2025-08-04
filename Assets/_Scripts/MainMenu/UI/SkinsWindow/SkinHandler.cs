@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class SkinHandler : MonoBehaviour
 {
-    public SkinDataSO UnlockedSkinData;
-   
+    [HideInInspector] public SkinDataSO UnlockedSkinData;
+
     [SerializeField] private Image[] images;
     [SerializeField] private List<ChooseSkinButton> unlockedButtons;
-    [SerializeField] private Image _currentlySelectedImage; 
+    [SerializeField] private Image _currentlySelectedImage;
 
     private Color _selectedColor = Color.red;
     private Color _color = Color.white;
@@ -19,15 +19,16 @@ public class SkinHandler : MonoBehaviour
     private void Start()
     {
         UpdateButtonColor(_currentlySelectedImage);
+        LoadUnlockedSkins();
     }
 
     public void UpdateButtonColor(Image image)
     {
-        
+
         if (!image.GetComponent<ChooseSkinButton>().IsUnlocked())
             return;
 
-        
+
         _currentlySelectedImage = image;
 
         foreach (var item in images)
@@ -55,12 +56,14 @@ public class SkinHandler : MonoBehaviour
 
         button.SetUnlocked();
         button.RemoveLockIcon();
-        unlockedButtons.Add(button);        
-        
+        unlockedButtons.Add(button);
+        PlayerData.Instance.AddUnlockedSkinIndex(button.GetSkinIndex());
+
+
         UnlockedSkinData = button.GetSkinData();
 
-        UpdateButtonsUi();             
-        
+        UpdateButtonsUi();
+
     }
 
     private void UpdateButtonsUi()
@@ -69,8 +72,26 @@ public class SkinHandler : MonoBehaviour
         {
             var button = item.GetComponent<ChooseSkinButton>();
             if (button.IsUnlocked())
-            {                
+            {
                 item.color = (item == _currentlySelectedImage) ? _selectedColor : _color;
+            }
+        }
+    }
+    private void LoadUnlockedSkins()
+    {       
+        List<int> unlockedIndexes = PlayerData.Instance.GetUnlockedSkinsIndexesList();
+      
+        foreach (var button in images.Select(img => img.GetComponent<ChooseSkinButton>()))
+        {
+            if (unlockedIndexes.Contains(button.GetSkinIndex()))
+            {
+                button.SetUnlocked();
+                button.RemoveLockIcon();
+               
+                if (!unlockedButtons.Contains(button))
+                {
+                    unlockedButtons.Add(button);
+                }
             }
         }
     }

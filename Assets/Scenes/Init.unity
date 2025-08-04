@@ -293,10 +293,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    IsFirstTimePlayed: 0
+    IsFirstTimePlayed: 1
     WeaponData: {fileID: 11400000, guid: 412d76d95b1113d4d906f56c144dd33e, type: 2}
     SkinData: {fileID: 11400000, guid: 4718844776e24fc4f97e45d7caee344c, type: 2}
     NickName: NICKNAME
+    UnlockedSkinsIndexes: 
+    UnlockedWeaponsIndexes: 
     Rating: 99999
     SoftCurrency: 0
     HardCurrency: 0
