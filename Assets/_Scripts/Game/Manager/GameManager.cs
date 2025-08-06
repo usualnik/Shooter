@@ -224,7 +224,14 @@ public class GameManager : MonoBehaviour
 
     private void LoadMainMenu()
     {
-        YG2.InterstitialAdvShow();
+        DateTime currentDate = DateTime.Now;        
+        DateTime showAfterDate = new DateTime(2025, 8, 13);
+        
+        if(currentDate >= showAfterDate)
+        {
+            YG2.InterstitialAdvShow();
+        }      
+
         SceneManager.LoadScene(MainMenuBuildIndex);
     }
 

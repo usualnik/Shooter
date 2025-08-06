@@ -2143,6 +2143,10 @@ PrefabInstance:
       propertyPath: _weaponIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 325892575670269098, guid: fd2ea7bb19eda25499d58646abad1970, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -40.74951
+      objectReference: {fileID: 0}
     - target: {fileID: 428493104147868359, guid: fd2ea7bb19eda25499d58646abad1970, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2421,7 +2425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1936421209295954499, guid: fd2ea7bb19eda25499d58646abad1970, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1936655025990350566, guid: fd2ea7bb19eda25499d58646abad1970, type: 3}
       propertyPath: m_sharedMaterial
