@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public bool IsMobilePlatform {  get; private set; }
     public float EndGameTimerMax {  get; private set; }
     public GameMode Mode { get; private set; }
+    public bool IsTutorial { get; private set; }
 
     public bool IsPlayerWin { get; private set; }
     public bool IsEqualScore { get; private set; }
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
             IsMobilePlatform = Application.isMobilePlatform;
             EndGameTimerMax = 90;
             Mode = GameMode.ThreeVsThree;
+            IsTutorial = true;
         }
         else
         {
@@ -63,6 +65,7 @@ public class GameManager : MonoBehaviour
             IsMobilePlatform = Application.isMobilePlatform;
             EndGameTimerMax = 90;
             Mode = _mode;
+            IsTutorial = false;
         }
 
              
@@ -127,6 +130,8 @@ public class GameManager : MonoBehaviour
     }
     private void EndGame()
     {
+        AudioManager.Instance.Stop("Countdown");
+
         PreviousRating = PlayerData.Instance.GetRating();
         PreviousCurrency = PlayerData.Instance.GetSoftCurrency();
 

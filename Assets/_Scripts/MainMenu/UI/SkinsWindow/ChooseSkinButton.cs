@@ -27,7 +27,7 @@ public class ChooseSkinButton : MonoBehaviour, IPointerClickHandler
 
         if (_isUnlocked)
         {
-            _skinHandler.UpdateButtonColor(_buttonImage);
+            //_skinHandler.UpdateButtonColor(_buttonImage);
             _lockIcon.SetActive(false);
 
         }
@@ -36,10 +36,12 @@ public class ChooseSkinButton : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        AudioManager.Instance.Play("Button");
+
         if (_isUnlocked)
         {
             SetPlayerSkinData();
-            _skinHandler.UpdateButtonColor(_buttonImage);
+           // _skinHandler.UpdateButtonColor(_buttonImage);
         }      
     }
 

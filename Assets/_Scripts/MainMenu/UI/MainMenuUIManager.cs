@@ -103,8 +103,8 @@ public class MainMenuUIManager : MonoBehaviour
     {     
         _levelText.text = PlayerData.Instance.GetPlayerLevel().ToString();
         
-        _levelProgressText.text = string.Format("{0} / {1}", PlayerData.Instance.GetCurrentLevelProgress().ToString()
-            , PlayerData.Instance.GetLevelProgressMax().ToString());
+        _levelProgressText.text = string.Format("{0} / {1}", PlayerData.Instance.GetCurrentLevelProgress().ToString("0")
+            , PlayerData.Instance.GetLevelProgressMax().ToString("0"));
 
         _levelProgressBar.fillAmount = (float)PlayerData.Instance.GetCurrentLevelProgress() / (float)PlayerData.Instance.GetLevelProgressMax();
     }
@@ -138,8 +138,8 @@ public class MainMenuUIManager : MonoBehaviour
     {
         _levelText.text = PlayerData.Instance.GetPlayerLevel().ToString();
 
-        _levelProgressText.text = string.Format("{0} / {1}", PlayerData.Instance.GetCurrentLevelProgress().ToString()
-            , PlayerData.Instance.GetLevelProgressMax().ToString());
+        _levelProgressText.text = string.Format("{0} / {1}", PlayerData.Instance.GetCurrentLevelProgress().ToString("0")
+            , PlayerData.Instance.GetLevelProgressMax().ToString("0"));
 
         _levelProgressBar.fillAmount = (float)PlayerData.Instance.GetCurrentLevelProgress() / (float)PlayerData.Instance.GetLevelProgressMax();
     }

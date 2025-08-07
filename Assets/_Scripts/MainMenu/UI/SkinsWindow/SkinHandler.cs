@@ -12,33 +12,38 @@ public class SkinHandler : MonoBehaviour
     [SerializeField] private List<ChooseSkinButton> unlockedButtons;
     [SerializeField] private Image _currentlySelectedImage;
 
-    private Color _selectedColor = Color.red;
-    private Color _color = Color.white;
+    //private Color _selectedColor = Color.red;
+    //private Color _color = Color.white;
 
 
     private void Start()
-    {
-        UpdateButtonColor(_currentlySelectedImage);
-        LoadUnlockedSkins();
+    {        
+        LoadUnlockedSkins();           
     }
 
-    public void UpdateButtonColor(Image image)
+    private void OnEnable()
     {
-
-        if (!image.GetComponent<ChooseSkinButton>().IsUnlocked())
-            return;
-
-
-        _currentlySelectedImage = image;
-
-        foreach (var item in images)
-        {
-            if (item.GetComponent<ChooseSkinButton>().IsUnlocked())
-                item.color = _color;
-        }
-
-        image.color = _selectedColor;
+        //UpdateButtonColor(_currentlySelectedImage);
     }
+
+    //public void UpdateButtonColor(Image image)
+    //{
+
+    //    if (!image.GetComponent<ChooseSkinButton>().IsUnlocked())
+    //        return;
+
+
+    //    _currentlySelectedImage = image;
+
+    //    foreach (var item in images)
+    //    {
+    //        if (item.GetComponent<ChooseSkinButton>().IsUnlocked())
+    //            item.color = _color;
+
+    //    }
+
+    //   // image.color = _selectedColor;
+    //}
 
     public void UnlockNewSkin()
     {
@@ -62,21 +67,21 @@ public class SkinHandler : MonoBehaviour
 
         UnlockedSkinData = button.GetSkinData();
 
-        UpdateButtonsUi();
+       // UpdateButtonsUi();
 
     }
 
-    private void UpdateButtonsUi()
-    {
-        foreach (var item in images)
-        {
-            var button = item.GetComponent<ChooseSkinButton>();
-            if (button.IsUnlocked())
-            {
-                item.color = (item == _currentlySelectedImage) ? _selectedColor : _color;
-            }
-        }
-    }
+    //private void UpdateButtonsUi()
+    //{
+    //    foreach (var item in images)
+    //    {
+    //        var button = item.GetComponent<ChooseSkinButton>();
+    //        if (button.IsUnlocked())
+    //        {
+    //            item.color = (item == _currentlySelectedImage) ? _selectedColor : _color;
+    //        }
+    //    }
+    //}
     private void LoadUnlockedSkins()
     {       
         List<int> unlockedIndexes = PlayerData.Instance.GetUnlockedSkinsIndexesList();
@@ -94,5 +99,6 @@ public class SkinHandler : MonoBehaviour
                 }
             }
         }
+        
     }
 }

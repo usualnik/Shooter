@@ -9,7 +9,7 @@ public class InitializeMainMenu : MonoBehaviour
     void Start()
     {
         // Delay loading, before PlayerData is initialized
-        Invoke("Init",0.1f);
+        Invoke("Init",0.3f);
     }
 
     private void Init()

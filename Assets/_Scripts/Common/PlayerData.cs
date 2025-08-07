@@ -44,6 +44,7 @@ public class PlayerData : MonoBehaviour
     public event Action OnLevelUp;
     public event Action OnStatChanged;
     public event Action OnPlayerSkinChanged;
+    public event Action OnPlayerWeaponChanged;
     public event Action OnPlayerHardCurrencyChanged;
     public event Action OnPlayerSoftCurrencyChanged;
 
@@ -67,6 +68,8 @@ public class PlayerData : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
 
+
+
         // Init rating for the first time 
         if (data.Rating == 99999)
         {
@@ -76,15 +79,17 @@ public class PlayerData : MonoBehaviour
         } else if (data.Rating <= 0)
         {
             data.Rating = 1;
-        }
-
+        }   
+        
 
         InitIsFirstTimePlayed();
 
         InitUnlockedSkins();
 
         InitUnlockedWeapons();    
-    }
+
+
+    }   
 
     private void InitIsFirstTimePlayed()
     {
@@ -258,6 +263,7 @@ public class PlayerData : MonoBehaviour
     {
         data.WeaponData = weaponData;
         SavePlayerDataToCloud();
+        OnPlayerWeaponChanged?.Invoke();
     }
 
 

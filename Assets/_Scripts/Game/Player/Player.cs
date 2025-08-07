@@ -21,6 +21,7 @@ public class Player : MonoBehaviour , IDamageable
     private const float HealingTimerMax = 3f;
 
     private PlayerShooting _playerShooting;
+    private PlayerMovement _playerMovement;
     
   
 
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour , IDamageable
     {
 
         _playerShooting = GetComponent<PlayerShooting>();
+        _playerMovement = GetComponent<PlayerMovement>();
 
         MaxHealth = PlayerData.Instance.GetHealth();        
 
@@ -36,6 +38,7 @@ public class Player : MonoBehaviour , IDamageable
         _healingTimer = HealingTimerMax;
 
         EquipGun();
+      
     }
 
     private void Start()
@@ -45,7 +48,22 @@ public class Player : MonoBehaviour , IDamageable
         if (IsBoss)
         {
             _currentHealth = PlayerBossMaxHealth;          
-        }        
+        }
+
+        if (GameManager.Instance.IsTutorial)
+        {
+            InitPlayer();
+        }
+        else
+        {
+            Invoke("InitPlayer", 4f);
+        }           
+    }   
+
+    private void InitPlayer()
+    {
+        _playerShooting.enabled = true;
+        _playerMovement.enabled = true;
     }
 
 

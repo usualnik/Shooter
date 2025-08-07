@@ -40,7 +40,10 @@ public class ChooseWeaponButton : MonoBehaviour
         InitUnlockedWeapon();
 
     }
-
+    private void OnEnable()
+    {
+        _priceText.text = "$ " + _weaponPrice.ToString();
+    }
 
     private void InitUnlockedWeapon()
     {
@@ -64,7 +67,7 @@ public class ChooseWeaponButton : MonoBehaviour
         if (_isUnlocked)
         {
             PlayerData.Instance.SetPlayerWeaponData(WeaponData);
-            _weaponSelectedButtonHandler.UpdateColor(_buttonImage);
+            //_weaponSelectedButtonHandler.UpdateColor(_buttonImage);
         }else if (!_isUnlocked && PlayerData.Instance.GetSoftCurrency() >= _weaponPrice)
         {
             BuyWeapon();
@@ -81,7 +84,7 @@ public class ChooseWeaponButton : MonoBehaviour
         PlayerData.Instance.AddSoftCurrency(-_weaponPrice);
         PlayerData.Instance.SetPlayerWeaponData(WeaponData);
         PlayerData.Instance.AddUnlockedWeaponIndex(_weaponIndex);
-        _weaponSelectedButtonHandler.UpdateColor(_buttonImage);
+       // _weaponSelectedButtonHandler.UpdateColor(_buttonImage);
     }
 
     public bool IsUnlocked() { return _isUnlocked; }

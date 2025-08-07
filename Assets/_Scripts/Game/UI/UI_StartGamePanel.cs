@@ -1,15 +1,32 @@
 using TMPro;
+using System;
 using UnityEngine;
 using YG;
 
 public class UI_StartGamePanel : MonoBehaviour
 {
+
+    public static UI_StartGamePanel Instance {  get; private set; }   
+
     [SerializeField] private TextMeshProUGUI _playersText;
 
     private const int ThreeVsThreePlayersMax = 6;
     private const int BossPlayersMax = 4;
 
     private float playersFound = 0;    
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
     void Start()
     {
@@ -33,7 +50,7 @@ public class UI_StartGamePanel : MonoBehaviour
         }
         else
         {
-            playersFound = maxPlayers;
+            playersFound = maxPlayers;            
         }
 
         UpdatePlayerText();
