@@ -33,7 +33,11 @@ public class UpdatePlayerSkin : MonoBehaviour
     }
     
     void UpdatePlayerVisuals()
-    {        
-        _image.sprite = PlayerData.Instance.GetSkinDataSO().SkinSprite;
+    {
+        if (_image != null)
+        {
+            _image.sprite = PlayerData.Instance.GetSkinDataSO().SkinSprite;
+        }
+        
     }
 }

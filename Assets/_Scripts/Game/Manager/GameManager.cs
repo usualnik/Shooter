@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
         }
     }
     private void EndGame()
-    {
+    {       
         AudioManager.Instance.Stop("Countdown");
 
         PreviousRating = PlayerData.Instance.GetRating();
@@ -167,7 +167,8 @@ public class GameManager : MonoBehaviour
     }
 
     public void KillBossEndGame(bool bossKilled)
-    {
+    {        
+        AudioManager.Instance.Stop("Countdown");
 
         PreviousRating = PlayerData.Instance.GetRating();
         PreviousCurrency = PlayerData.Instance.GetSoftCurrency();

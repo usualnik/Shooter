@@ -57,8 +57,22 @@ public class Player : MonoBehaviour , IDamageable
         else
         {
             Invoke("InitPlayer", 4f);
-        }           
+        }
+
+        GameManager.Instance.OnGameEneded += GameManager_EndGameBehaviour;
+
     }   
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.OnGameEneded -= GameManager_EndGameBehaviour;
+    }
+
+    private void GameManager_EndGameBehaviour()
+    {
+        _playerShooting.enabled = false;
+        _playerMovement.enabled = false;
+    }
 
     private void InitPlayer()
     {

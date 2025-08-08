@@ -123,7 +123,7 @@ public class MobMovement : MonoBehaviour
 
     private Vector2 GetObstacleAvoidanceDirection(Vector2 desiredDirection)
     {
-        Vector2 boxCastSize = _mob.IsBoss ? new Vector2(4, 4) : new Vector2(2, 2);
+        Vector2 boxCastSize = _mob.IsBoss ? new Vector2(2.3f, 2.3f) : new Vector2(2, 2);
 
         RaycastHit2D hit = Physics2D.BoxCast(
             transform.position,

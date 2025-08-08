@@ -34,6 +34,7 @@ public class UpdateWeaponImage : MonoBehaviour
 
     void UpdatePlayerVisuals()
     {
-        _image.sprite = PlayerData.Instance.GetCurrentGunSO().ItemPreview;
+        if(_image != null) 
+            _image.sprite = PlayerData.Instance.GetCurrentGunSO().ItemPreview;
     }
 }

@@ -5,31 +5,32 @@
     "floatValues": [],
     "intKeys": [],
     "intValues": [],
-    "idSave": 32,
+    "idSave": 449,
     "YandexServerData": {
         "IsFirstTimePlayed": false,
         "WeaponData": {
-            "instanceID": 28136
+            "instanceID": 28144
         },
         "SkinData": {
-            "instanceID": 28980
+            "instanceID": 28770
         },
         "NickName": "NICKNAME",
         "UnlockedSkinsIndexes": [
             0,
-            11,
-            10
+            9
         ],
         "UnlockedWeaponsIndexes": [
-            0
+            0,
+            1,
+            3
         ],
-        "Rating": 22344,
-        "SoftCurrency": 0,
+        "Rating": 13770,
+        "SoftCurrency": 28,
         "HardCurrency": 0,
-        "Level": 1,
+        "Level": 5,
         "CurrentExperience": 0,
-        "MaxExperience": 400.0,
-        "LevelPoints": 0,
+        "MaxExperience": 1142.43994140625,
+        "LevelPoints": 20,
         "Health": 100,
         "Damage": 25.0,
         "CritChance": 1,

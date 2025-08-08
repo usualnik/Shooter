@@ -1,8 +1,14 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Mob : MonoBehaviour , IDamageable
 {
+    public event EventHandler OnTakingDamage;
+    public event EventHandler OnRespawn;
+    public Transform _target;
+
     public Transform Target {  get; private set; }
     public bool IsBoss { get; private set; }
 
@@ -14,17 +20,32 @@ public class Mob : MonoBehaviour , IDamageable
 
     //private const float DeathTimer = 0.1f;
 
-    private float _changeTargetTimer;
-    private const float ChangeTargetTimerMax = 3f;
+    private MobShooting _mobShooting;
 
-    public event EventHandler OnTakingDamage;
-    public event EventHandler OnRespawn;
-    public Transform _target;
+    private float _changeTargetTimer;
+    private const float ChangeTargetTimerMax = 2f;
+
     
     private void Awake()
     {
         _currentHealth = MaxHealth;
+        _mobShooting = GetComponent<MobShooting>();
     }
+
+    private void Start()
+    {
+        GameManager.Instance.OnGameEneded += GameManager_EndGameBehaviour;
+    }
+    private void OnDestroy()
+    {
+        GameManager.Instance.OnGameEneded -= GameManager_EndGameBehaviour;
+    }
+
+    private void GameManager_EndGameBehaviour()
+    {
+       _mobShooting.enabled = false;
+    }
+
 
     public void TakeDamage(float damage)
     {
@@ -54,28 +75,51 @@ public class Mob : MonoBehaviour , IDamageable
             _changeTargetTimer = ChangeTargetTimerMax;
         }
     }
+
     private void ChangeTarget()
     {
         Unit[] possibleTargets = GameObject.FindObjectsByType<Unit>(FindObjectsSortMode.None);
-        Transform closestTarget = null;
-        float closestDistance = Mathf.Infinity;
-
+        
+        List<Unit> validTargets = new List<Unit>();
         foreach (Unit target in possibleTargets)
         {
-
             if (target != null && target.gameObject.tag != gameObject.tag)
             {
-                float distance = Vector3.Distance(transform.position, target.transform.position);
+                validTargets.Add(target);
+            }
+        }
+        
+        if (validTargets.Count == 0)
+        {
+            Target = null;
+            return;
+        }
 
+        float randomChance = 0.2f;
+        if (Random.value < randomChance && validTargets.Count > 1)
+        {
+           
+            int randomIndex = Random.Range(0, validTargets.Count);
+            Target = validTargets[randomIndex].transform;
+        }
+        else
+        {
+           
+            Transform closestTarget = null;
+            float closestDistance = Mathf.Infinity;
+
+            foreach (Unit target in validTargets)
+            {
+                float distance = Vector3.Distance(transform.position, target.transform.position);
                 if (distance < closestDistance)
                 {
                     closestDistance = distance;
                     closestTarget = target.transform;
                 }
             }
-        }
 
-        Target = closestTarget;
+            Target = closestTarget;
+        }
     }
 
     private void DestroySelf()

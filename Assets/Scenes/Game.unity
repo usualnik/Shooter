@@ -127011,6 +127011,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7454316030424490878, guid: 6fcf09993d9332c4592553df708be331, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8874065178677259242, guid: 6fcf09993d9332c4592553df708be331, type: 3}
       propertyPath: m_fontAsset
       value: 
