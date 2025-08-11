@@ -225,6 +225,12 @@ public class PlayerData : MonoBehaviour
     public void GainRating(int value)
     {
         data.Rating += -value;
+
+        if (data.Rating <= 0)
+        {
+            data.Rating = 1;
+        }
+
         SavePlayerDataToCloud();
     }
     public void AddUnlockedSkinIndex(int skinIndex)
@@ -277,7 +283,10 @@ public class PlayerData : MonoBehaviour
         }             
         else
         {
-            this.data = yandexServerData;            
+            yandexServerData.Rating = yandexServerData.Rating <= 0 ? 1 : yandexServerData.Rating;
+
+            this.data = yandexServerData;      
+            
         }
     }
 

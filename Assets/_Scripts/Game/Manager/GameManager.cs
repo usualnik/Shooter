@@ -231,7 +231,7 @@ public class GameManager : MonoBehaviour
     private void LoadMainMenu()
     {
         DateTime currentDate = DateTime.Now;        
-        DateTime showAfterDate = new DateTime(2025, 8, 13);
+        DateTime showAfterDate = new DateTime(2025, 8, 15);
         
         if(currentDate >= showAfterDate)
         {

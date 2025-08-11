@@ -300,7 +300,7 @@ MonoBehaviour:
     UnlockedSkinsIndexes: 
     UnlockedWeaponsIndexes: 
     Rating: 99999
-    SoftCurrency: 200
+    SoftCurrency: 0
     HardCurrency: 0
     Level: 1
     CurrentExperience: 0
